@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <meta property="og:title" content="360 Tube">
+    <meta property="og:description" content="A 360° YouTube video player">
+    <meta property="og:image" content="https://cdn.sidequestvr.com/file/466244/banter_kwicywhfaq.png">
+    <script src="https://lunartiger.github.io/banter/assets/js/webcontent.js" sq-space="https://sidequestvr.com/space/1571"></script>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script> 
+    <meta name="sidequest-space-verification" content="4cac0fdd-5001-4c7f-b503-55d3fe2e0030">
+    <script>
+      
+      // These are the buttons for the URLs, you can remix this and change the names and urls for your own!
+      
+      
+      const urls = [
+        {name: "slide", url: "https://www.youtube.com/watch?v=QKm-SOOMC4c"},
+        {name: "coaster", url: "https://www.youtube.com/watch?v=dtTvEZquitE"},
+        {name: "amusement", url: "https://www.youtube.com/watch?v=PGqPb33b2vY"},
+        {name: "jurassic", url: "https://www.youtube.com/watch?v=93nxeejhPkU"},
+        {name: "epic", url: "https://www.youtube.com/watch?v=bqbmX59H_OM"},
+        {name: "airpano", url: "https://www.youtube.com/watch?v=uvJIrij9W7M"}
+      ];
+      
+      
+    </script>
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <div style="display: none;"><a-scene sq-enablespiderman sq-clippingplane="far: 2500" sq-kitbundle="android: https://cdn.glitch.global/4274f266-2e21-4321-8edb-4bda82ae12f0/kitbundle_android%20(1)?v=1695063991398; 
+                                                              desktop: https://cdn.glitch.global/4274f266-2e21-4321-8edb-4bda82ae12f0/kitbundle_standalonewindows%20(1)?v=1695064010042;" embedded>
+      
+      <a-box sq-collider color="olive" src="https://cdn.glitch.global/2a554444-5769-4b8b-ba56-b77898b35243/Circle.png?v=1693661130798" transparent="true" scale="5 0.1 5"></a-box>
+      <a-entity id="video" sq-kititem="item: assets/_content/youtube360playersphere.prefab" scale="10 10 10"></a-entity>
+      
+      <a-entity id="fae" sq-kititem="item: assets/_content/faebot/faebot.prefab" position="0 0 2"></a-entity>
+      
+      <a-box id="loadingTextBack" visible="false" color="black" position="0 1 1.8" scale="1 0.3 0.01" ></a-box>
+      <a-text id="loadingText" position="0 1 1.7773" rotation="0 180 0" align="center" value="< Click to play"></a-text>
+      
+      <a-entity id="hideFaeButton" gltf-model="https://cdn.sidequestvr.com/file/460973/buttonl.glb" rotation="30 0 0" position="0 0.1 1.8" delete-fae sq-boxcollider="size: 1.5 0.4 0.05" sq-interactable></a-entity>
+      <a-text id="hideFaeButtonText" value="hide fae" rotation="-30 180 0" position="0 0.1 1.77" scale="0.6 0.6 0.6" align="center"></a-text>
+      
+      
+      <a-entity id="videoAudio" sq-kititem="item: assets/_content/youtube360playersphere.prefab" scale="0.0001 0.0001 0.0001" position="-1 0.2 1.81"></a-entity>
+      <a-entity id="gravity" gltf-model="https://cdn.sidequestvr.com/file/460973/buttonl.glb" rotation="30 0 0" position="-1 0.2 1.8" change-gravity sq-boxcollider="size: 1.5 0.4 0.05" sq-interactable></a-entity>
+      <a-text  value="gravity" rotation="-30 180 0" position="-1 0.2 1.77" scale="0.6 0.6 0.6" align="center"></a-text>
+    </a-scene></div>
+  </body> 
+</html>

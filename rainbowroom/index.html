@@ -1,0 +1,487 @@
+<html>
+  <head>
+    <meta name="sidequest-space-verification" content="a2dc8c3c-81f5-4d9a-aa59-3be9b06571a5">
+    <meta property="og:title" content="The Rainbow Room">
+    <meta property="og:description" content="Love Dance Sing and Laugh">
+    <meta property="og:image" content="https://i.imgur.com/wBd0qjN.jpg">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://lunartiger.github.io/banter/assets/js/webcontent.js" sq-space="https://sidequestvr.com/space/1585"></script>
+  </head>
+  <body>
+
+    <div style="display: none;"><a-scene sq-hidedefaulttextures sq-kitbundle="android: https://cdn.glitch.global/df74b0ee-a7cc-4fed-befe-4b9c8bb3612f/kitbundle_android?v=1691744937904; desktop: https://cdn.glitch.global/df74b0ee-a7cc-4fed-befe-4b9c8bb3612f/kitbundle_standalonewindows?v=1691744939922" 
+             sq-assetbundle="android: https://cdn.sidequestvr.com/file/460749/highbant_android-1;
+                            desktop: https://cdn.sidequestvr.com/file/460750/highbant_standalonewindows-1;"
+          
+             sq-maxoccupancy="number: 25" sq-friendpositionjoinallowed="false" announce="false" embedded>
+            
+<!--       sq-spawnpoint="position: 7.6 2.3 7.4;" -->
+
+      
+      
+    <a-assets>
+    <a-asset-item id="couches" src="https://cdn.glitch.global/1d1d69ac-8e1e-4058-b9c0-cc2f034a0d0e/couches.glb?v=1693048793801"></a-asset-item>
+    <a-asset-item id="carpets" src="https://cdn.glitch.global/1d1d69ac-8e1e-4058-b9c0-cc2f034a0d0e/carpets.glb?v=1693049789531"></a-asset-item>
+    </a-assets>
+    
+      <!-- Enable for karaoke Player Only -->
+     <!---- <a-entity sq-kititem="item: assets/prefabs/mirror(clone) (1).prefab" position="16.01 1.07 6.64" rotation="-10.769 24 0"></a-entity> 
+
+  <script src="https://vidya-player.glitch.me/karaoke.js" instance="rainbowkaraoke"
+              position="9.068851 1.603804 -9.077191" rotation="0 24.284 0" scale="7.155705 6.8 7.155705" volume="50" announce="false" one-for-each-instance="false" 
+             singer-button-position="21 1.5 17.3" singer-button-rotation="0 -114 0"
+              box-trigger-exit-enabled="true" box-trigger-enter-enabled="true" box-trigger-scale="8 5 8"></script>
+      
+      <!---->
+      
+            <!-- Add this line to your space to add a list of portals there 
+      <script src="https://vidya-player.glitch.me/portals.js" shape="line" spiral-tightness="0.2" show-events="true" spacing="2" position="-2 0 10" rotation="0 180 0" space-limit="2"></script> <!---->
+      
+           <!-- A box to click to goto a random space -->
+<a-box sq-collider sq-interactable sq-clickurl="url:banter://sq-community.glitch.me/random" color="#f00" position="-2.95 .4 11" rotation="0 180 0" depth="0.05" width="2" height="0.666" scale="0.2 0.2 0.2">
+  <a-text value="do NOT click this!" position="0 0 0.03" color="#000" align="center"></a-text>
+</a-box>
+     
+      
+      
+       <!-- Enable for Screenshare Only -->
+        <!---- <a-entity   id="theBrowser" 
+                sq-browser="url: https://screen-cast.glitch.me/?sid=12345444; mipMaps: 1; pixelsPerUnit: 1600; mode: local;" position="9.068851 1.603804  -9.077191" announce="false" rotation="0 24.284 0" scale="7.155705 6.8 7.155705"></a-entity> 
+<!---->
+      
+            <!-- Enable for VideoJukebox Player Only
+ 80s PLkqz3S84Tw-Qjyd_zHSVH_Xj6ge7yrgYI
+meditation PL3Pymv3ROMskJKT6RFlBYQ0rR6oyq8I9M
+
+
+-->
+       <script src="https://vidya-player.glitch.me/playlist.js" instance="rainbowroomplaylist" 
+              position="9.068851 1.603804 -9.077191" scale="7.155705 6.8 7.155705" rotation="0 24.284 0" announce="false" volume="10"
+              playlist="PL3Pymv3ROMsnoeFnMeerAvh_7ScvE4f80"></script> 
+      
+      
+     
+
+      
+      <a-entity gltf-model="https://cdn.glitch.global/df74b0ee-a7cc-4fed-befe-4b9c8bb3612f/mic_stand_texture_for_both_characters.glb?v=1691742173740" sq-collider="recursive: true" rotation="0 113.555 0" position="10.682 -0.148 -5.429" scale="0.6 0.6 0.6"></a-entity>
+      <a-entity gltf-model="https://cdn.glitch.global/df74b0ee-a7cc-4fed-befe-4b9c8bb3612f/coyote_mic_2_redo_1.glb?v=1691742645609" sq-collider="recursive: true" rotation="-45 23.555 0" position="10.682 0.44 -5.429" scale="0.1 0.1 0.1"></a-entity>
+      <a-entity gltf-model="https://cdn.glitch.global/df74b0ee-a7cc-4fed-befe-4b9c8bb3612f/drum_kit_for_your_band.glb?v=1691743365437" sq-collider="recursive: true" rotation="0 41.564 0" position="13.38 -0.886 -9.78" scale="0.01 0.01 0.01"></a-entity>
+      <a-entity gltf-model="https://cdn.glitch.global/df74b0ee-a7cc-4fed-befe-4b9c8bb3612f/cort_g-110_electric_guitar_-_lowpoly.glb?v=1691743130074" sq-collider="recursive: true" rotation="0 -45 0" position="5.619 -0.81 -6.593" scale="0.08 0.08 0.08"></a-entity>
+
+      
+      
+      <a-entity rotation="0 90 0"> 
+      
+      
+    <!--couch and carpet -->
+    <a-entity gltf-model="#couches" rotation="0 90 0" material="repeat: 3 3"></a-entity> 
+    <a-entity gltf-model="#carpets" rotation="0 90 0" material="repeat: 2 2"></a-entity>
+
+    <!--sky-->
+    <a-sky radius="130" src="https://i.imgur.com/7EYbdTx.jpg" segments-width="10" position="0 -10 35" segments-height="20"></a-sky>
+
+    <!--a-plane> Everything you want blocked out example </a-plane-->
+    
+    <!--Interactable mic
+
+      <a-entity position="3 0.50 12" mixin="model1"rotation="-60 90 0"scale="1.5 1.5 1.5" instantiator="on: click;group: model1; mixin: model1 parent-to-right-hand"></a-entity> -->
+    
+    <!--main sign -->
+    <a-plane src="https://i.imgur.com/nXV06I6.png" height="5" width="10" rotation="0 180 0" radius="2" side="double"
+             position="1.89 7.4 31.6">
+    </a-plane>
+    
+    <!--abba-->
+    <a-plane src="https://i.imgur.com/TfIyB2P.jpg" height="3" width="2" rotation="0 180 0" radius="2" side="double"
+             position="7.4 2 31.6">
+    </a-plane>
+    
+              <!--hearts on the floor-->
+    <a-plane src="https://i.imgur.com/FtHJJzZ.png" width="7" height="7" radius="1" side="double" position="-3.1 0.025 19.6"
+             altspace-cursor-collider="enabled: false" rotation="90 140 0" transparent="true" opacity=".2">
+    </a-plane>
+    
+                  <!--hearts on the floor by the square rug-->
+    <a-plane src="https://i.imgur.com/FtHJJzZ.png" width="5" height="5" radius="1" side="double" position="-0.3 0.025 5"
+             altspace-cursor-collider="enabled: false" rotation="90 40 420" transparent="true" opacity=".2">
+    </a-plane>
+    
+                  <!--keeley unicorn-->
+    <a-plane src="https://i.imgur.com/gKd9umG.png" width="3" height="4" radius="1" side="double" position="9.5 6.7 0.8"
+             altspace-cursor-collider="enabled: false" rotation="0 -60 0" transparent="true" opacity=".4">
+    </a-plane>
+    
+        <!--the fonz-->
+    <a-plane src="https://i.imgur.com/4oG1KK5.jpg" height="2" width="1.2" rotation="0 -90 0" radius="2" side="double"
+             position="12.6 5 28.30">
+    </a-plane>
+    
+    <!--journey-->
+    <a-plane src="https://i.imgur.com/yJnTBlx.jpg" height="3" width="2" rotation="0 180 0" radius="2" side="double"
+             position="3.9 2 31.6">
+    </a-plane>
+
+    <!--billy joel-->
+    <a-plane src="https://i.imgur.com/7DuYjrD.jpg" height="3" width="2" rotation="0 180 0" radius="2" side="double"
+             position=".2 2 31.6">
+    </a-plane>
+
+    <!--grease-->
+    <a-plane src="https://i.imgur.com/uX23YLq.jpg" height="3" width="2" rotation="0 180 0" radius="2" side="double"
+             position="-3.5. 2 31.6">
+    </a-plane>
+
+    <!--> elvis poster -->
+    <a-plane src="https://i.imgur.com/flKSO8T.jpg" height="4.8" width="2.4" rotation="0 295 0" radius="2" side="double"
+             position="11.02 7.6 11.31">
+    </a-plane>
+    
+    <!--wall behind video player-->
+    <a-entity rotation="0 -65.84 0" position="7.95225 1 5.9">
+       <a-plane src="https://i.imgur.com/Td2hffB.jpg" height="6.25" width="20.275" radius="2" side="double">
+       </a-plane>
+   </a-entity>
+    
+        <!--celing-->
+ <a-plane src="https://i.imgur.com/phj5Uuh.jpg" material="repeat: 5 5" width="27.6" height="57" radius="1" side="double" position="-0.95 10.4 8.7"
+            altspace-cursor-collider="enabled: false" rotation="90 0 0">
+   </a-plane>
+
+
+
+
+    <!--monkees -->
+    <a-plane src="https://i.imgur.com/aotnPuj.jpg" height="3" width="2" rotation="0 -68 0" radius="2" side="double"
+             position="11.4 2 13.75">
+    </a-plane>
+
+
+
+    <!--Amazing quote-->
+    <a-plane src="https://i.imgur.com/8YHu9P4.jpg" height="2" width="4" rotation="0 -90 0" radius="2" side="double"
+             position="12.5 9.1 22.30" transparent="true">
+    </a-plane>
+    
+    <!--Juke box-->
+    <a-plane src="https://i.imgur.com/uMyB0ro.png" height="4" width="2.6" rotation="0 90 0" radius="2" side="double"
+             position="11.2 2.7 22.30" transparent="true">
+    </a-plane>
+
+    <!--Juke box side one-->
+    <a-plane src="https://i.imgur.com/5wB7vo8.png" height="3.8" width=".94" rotation="0 183 0" radius="2" side="double"
+             position="11.68 2.55 23.55" transparent="true">
+    </a-plane>
+
+    <!--Juke box side two-->
+    <a-plane src="https://i.imgur.com/5wB7vo8.png" height="3.8" width=".94" rotation="0 185 0" radius="2" side="double"
+             position="11.68 2.55 21.0a5" transparent="true">
+    </a-plane>
+
+    <!--Juke box back-->
+    <a-plane src="https://i.imgur.com/uMyB0ro.png" height="4" width="2.6" rotation="0 90 0" radius="2" side="double"
+             position="12.2 2.7 22.30" transparent="true">
+    </a-plane>
+
+    <!--motorcycle-->
+    <a-plane src="https://i.imgur.com/D8QbPJ4.png" height="1.8" width="3" rotation="0 60 5" radius="2" side="double"
+             position="11 0.85 28.30" transparent="true">
+    </a-plane>
+
+     <!--> beatles -->
+    <a-plane src="https://i.imgur.com/sFgqeG3.jpg" height="3" width="2" rotation="0 -68 0" radius="2" side="double"
+             position="6.2 2 2.5">
+    </a-plane>
+
+    <!--queen -->
+    <a-plane src="https://i.imgur.com/lA30gEg.jpg" height="3" width="2" rotation="0 -68 0" radius="2" side="double"
+             position="5.2 2 0" transparent="true">
+    </a-plane>
+
+    
+
+    <!--beach boys-->
+    <a-plane src="https://i.imgur.com/Qz6xTzy.jpg" height="3" width="2" rotation="0 90 0" radius="2" side="double"
+             position="-6.8 8.2 7.98">
+    </a-plane>
+
+    <!--heart-->
+    <a-plane src="https://i.imgur.com/JZA6VeE.jpg" height="3" width="2" rotation="0 360 0" radius="2" side="double"
+             position="-8.2 8.2 9.3">
+    </a-plane>
+    
+
+    <!--b52-->
+    <a-plane src="https://i.imgur.com/sHB4rIT.jpg" height="3" width="2" rotation="0 180 0" radius="2" side="double"
+             position="-8.2 8.2 6.4">
+    </a-plane>
+
+    <!--woodstock-->
+    <a-plane src="https://i.imgur.com/4bVzDtZ.jpg" height="3" width="2" rotation="0 -90 0" radius="2" side="double"
+             position="-9.8 8.2 8">
+    </a-plane>
+
+    <!--dance floor-->
+    <a-entity id="box1" geometry="primitive: box;"
+              position='-7.3 2.46 8'
+              scale='5 .1 6' sq-collider></a-entity>
+
+    <!--black box under dance floor-->
+    <a-plane src="https://i.imgur.com/8VfB2aA.png" width="7" height="6.1" radius="2" side="double" position="-7.3 2.46 8"
+             altspace-cursor-collider="enabled: false" sq-collider rotation="90 -90 0">
+    </a-plane>
+
+    <!--lyrics to walk on - dancing queen -->
+    <a-plane src="https://i.imgur.com/Gt3PuIu.png" width="2" height="3" radius="2" side="double" position="-9.9 2.92 .4"
+             altspace-cursor-collider="enabled: false" rotation="-72 0 0"
+             transparent="true">
+    </a-plane>
+
+  
+    <!--purple above disco ball-->
+    <a-plane src="https://cdn.glitch.global/1d1d69ac-8e1e-4058-b9c0-cc2f034a0d0e/53PceVd.jpg?v=1693042677077" width="2.8" height="2.8" radius="1" side="double"
+             position="-8.25 6.35 7.9" altspace-cursor-collider="enabled: false" rotation="90 -90 0">
+    </a-plane>
+        
+        
+         <!--
+
+    <!--new disco ball
+  <a-entity rotation="0 0 0" animation="property: rotation; to: 0 -360 0; loop: true; dur: 8000">
+        <a-sphere segments-height="18" segments-width="18" position="-8.2 5.1 7.9" id="sphere1" src="https://cdn.glitch.global/1d1d69ac-8e1e-4058-b9c0-cc2f034a0d0e/z7L9gIu.jpg?v=1693042706198" width="1" height=".5" radius=".75" side="double"
+  </a-sphere>
+</a-entity>
+        
+        <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 8000">
+        <a-sphere segments-height="18" segments-width="18" position="-8.2 5.1 7.9" id="sphere1" src="https://cdn.glitch.global/1d1d69ac-8e1e-4058-b9c0-cc2f034a0d0e/z7L9gIu.jpg?v=1693042706198" width="1" height=".5" radius=".75" side="double"
+  </a-sphere>
+</a-entity>
+        -->
+        
+        
+        <!--old disco ball
+    <a-sphere segments-height="18" segments-width="18" src="https://cdn.glitch.global/1d1d69ac-8e1e-4058-b9c0-cc2f034a0d0e/z7L9gIu.jpg?v=1693042706198" width="1" height=".5" radius=".75" side="double"
+              position="-8.2 5.1 7.9" altspace-cursor-collider="enabled: false" rotation="0 0 0">
+        <a-animation attribute="rotation" dur="10000" fill="backwards" to="0 360 0" repeat="indefinite"
+                     easing="linear"></a-animation>
+    </a-sphere>
+--
+    <a-sphere segments-height="18" segments-width="18" src="https://cdn.glitch.global/1d1d69ac-8e1e-4058-b9c0-cc2f034a0d0e/z7L9gIu.jpg?v=1693042706198" width="1" height=".5" radius=".75" side="double"
+              position="-8.2 5.1 7.9" altspace-cursor-collider="enabled: false" rotation="0 0 0">
+        <a-animation attribute="rotation" dur="8000" fill="frontwards" to="0 -360 0" repeat="indefinite"
+                     easing="linear"></a-animation>
+    </a-sphere>
+
+-->
+        
+
+
+    <!--old lights
+    <a-entity color="yellow" radius=".7" rotation="0 0 0" position="-8.2 5.1 7.9"
+              altspace-cursor-collider="enabled: false">
+        <a-entity color="#336699" radius="0.1" rotation="45 0 0" position="0.8 0 0">
+            <a-cylinder segments-height="1" segments-radial="8" color="#FFFFFF" height="4" radius="0.02" position="0 -2 0">
+                <a-animation attribute="opacity" from='0' to='0.002' direction="alternate" dur='100'
+                             repeat='indefinite'></a-animation>
+            </a-cylinder>
+            <a-animation attribute="rotation" from='45 0 0' to='45 360 0' dur='200' easing="linear"
+                         repeat='indefinite'></a-animation>
+        </a-entity>
+        <a-entity color="#336699" radius="0.1" rotation="45 0 0" position="-0.8 0 0">
+            <a-cylinder segments-height="1" segments-radial="8" color="#FFFFFF" height="4" radius="0.02" position="0 -2 0">
+                <a-animation attribute="opacity" from='0' to='0.002' direction="alternate" dur='110'
+                             repeat='indefinite'></a-animation>
+            </a-cylinder>
+            <a-animation attribute="rotation" from='45 360 0' to='45 0 0' dur='500' easing="linear"
+                         repeat='indefinite'></a-animation>
+        </a-entity>
+        <a-entity color="#336699" radius="0.1" rotation="45 0 0" position="0 0 0.8">
+            <a-cylinder segments-height="1" segments-radial="8" color="#FFFFFF" height="4" radius="0.02" position="0 -2 0">
+                <a-animation attribute="opacity" from='0' to='0.002' direction="alternate" dur='120'
+                             repeat='indefinite'></a-animation>
+            </a-cylinder>
+            <a-animation attribute="rotation" from='45 0 0' to='45 360 0' dur='200' easing="linear"
+                         repeat='indefinite'></a-animation>
+        </a-entity>
+        <a-entity color="#336699" radius="0.1" rotation="45 0 0" position="0 0 -0.8">
+            <a-cylinder segments-height="1" segments-radial="8" color="#FFFFFF" height="4" radius="0.02" position="0 -2 0">
+                <a-animation attribute="opacity" from='0' to='0.002' direction="alternate" dur='140'
+                             repeat='indefinite'></a-animation>
+            </a-cylinder>
+            <a-animation attribute="rotation" from='45 360 0' to='45 0 0' dur='500' easing="linear"
+                         repeat='indefinite'></a-animation>
+        </a-entity>
+        <a-animation attribute="rotation" from='0 0 0' to='0 360 0' dur='1500' easing="linear"
+                     repeat='indefinite'></a-animation>
+    </a-entity> -->
+
+
+    <!--dance floor dots-->
+    <a-entity position="-7.3 2.56 8" altspace-cursor-collider="enabled: false">
+        <a-plane material="src: url(https://i.imgur.com/u0rpqGX.png); repeat:2 2;" rotation="-90 0 0" height="5"
+                 width="5" position="0 0 0" opacity="0.1">
+            <a-animation attribute="rotation" from="-90 360 0" to="-90 0 0" dur="5000" easing="linear"
+                         repeat="indefinite"></a-animation>
+            <a-animation attribute="opacity" from="0.0" to="0.9" direction="alternate" dur="100"
+                         repeat="indefinite"></a-animation>
+        </a-plane>
+        <a-plane material="src: url(https://i.imgur.com/u0rpqGX.png); repeat:2 2;" rotation="-90 0 0" height="4"
+                 width="4" position="0 0 0" opacity="0.1">
+            <a-animation attribute="rotation" from="-90 360 0" to="-90 0 0" dur="4000" easing="linear"
+                         repeat="indefinite"></a-animation>
+            <a-animation attribute="opacity" from="0.0" to="0.9" direction="alternate" dur="200"
+                         repeat="indefinite"></a-animation>
+        </a-plane>
+    </a-entity>
+
+    <!--Sweet Caroline lyrics-->
+    <a-plane src="https://i.imgur.com/b0YTrq8.jpg" height=".95" width="1.65" rotation="0 90 0" radius="2" side="double"
+             position="-14.9 5.81 20.668">
+    </a-plane>
+
+    <!--I will survive lyrics-->
+    <a-plane src="https://i.imgur.com/QWsVBdK.jpg" height=".95" width="1.65" rotation="0 90 0" radius="2" side="double"
+             position="-14.9 5.81 18.668">
+    </a-plane>
+
+    <!--Take on me lyrics-->
+    <a-plane src="https://i.imgur.com/QSMEgHy.jpg" height=".95" width="1.65" rotation="0 90 0" radius="2" side="double"
+             position="-14.9 5.81 16.668">
+    </a-plane>
+
+    <!--Rock around the clock lyrics-->
+    <a-plane src="https://i.imgur.com/f3XNAuc.jpg" height=".95" width="1.65" rotation="0 90 0" radius="2" side="double"
+             position="-14.9 5.81 14.668">
+    </a-plane>
+
+    <!--Let it be lyrics-->
+    <a-plane src="https://i.imgur.com/xIVNm1k.jpg" height=".95" width="1.65" rotation="0 90 0" radius="2" side="double"
+             position="-14.9 5.91 4.228">
+    </a-plane>
+
+    <!--Love Shack lyrics-->
+    <a-plane src="https://i.imgur.com/4Di2SI0.jpg" height=".95" width="1.65" rotation="0 90 0" radius="2" side="double"
+             position="-14.9 5.91 2.328">
+    </a-plane>
+
+    <!--Bohemian rhapsody lyrics-->
+    <a-plane src="https://i.imgur.com/HdMxYcD.jpg" height=".95" width="1.65" rotation="0 90 0" radius="2" side="double"
+             position="-14.9 5.91 .528">
+    </a-plane>
+
+    <!--Last train to clarksville lyrics-->
+    <a-plane src="https://i.imgur.com/dc0Gmy9.jpg" height=".95" width="1.65" rotation="0 90 0" radius="2" side="double"
+             position="-14.9 5.91 -1.328">
+    </a-plane>
+
+    
+    <!--SDK pic-->
+    <a-plane src="https://i.imgur.com/v0bPTst.jpg" height="1.4" width="2" rotation="0 -90 0" radius="2" side="double"
+             position="-8.3 5.91 -3">
+    </a-plane>
+
+    <!--My girl lyrics-->
+    <a-plane src="https://i.imgur.com/Nz6SZ8m.jpg" height=".95" width="1.65" rotation="0 90 0" radius="2" side="double"
+             position="-14.9 5.91 -3.198">
+    </a-plane>
+
+    <!--Wonderful world lyrics-->
+    <a-plane src="https://i.imgur.com/KiHE43g.jpg" height=".95" width="1.65" rotation="0 90 0" radius="2" side="double"
+             position="-14.9 5.91 -5.098">
+    </a-plane>
+
+    <!--I wanna hold your hand lyrics-->
+    <a-plane src="https://i.imgur.com/kMt6TAM.jpg" height=".95" width="1.65" rotation="0 360 0" radius="2" side="double"
+             position="-12.74 5.91 -6.297">
+    </a-plane>
+
+    <!--dont stop lyrics-->
+    <a-plane src="https://i.imgur.com/7HndYDC.jpg" height=".95" width="1.65" rotation="0 360 0" radius="2" side="double"
+             position="-10.34 5.91 -6.297">
+    </a-plane>
+
+    <!--Dance wording part 1-->
+    <a-plane src="https://i.imgur.com/X2CLMVP.png" height="1" width="5" rotation="0 -360 0" radius="2" side="double"
+             position="-11.2 7.4 -13.5" transparent="true">
+    </a-plane>
+
+    <!--sing wording part 2-->
+    <a-plane src="https://i.imgur.com/Y4rFyr7.png" height="1" width="4.8" rotation="0 -360 0" radius="2" side="double"
+             position="-6.3 7.4 -13.5" transparent="true">
+    </a-plane>
+
+    <!--live wording part 3-->
+    <a-plane src="https://i.imgur.com/N1sE2Hq.png" height="1" width="5" rotation="0 -90 0" radius="2" side="double"
+             position="-3.9 7.4 -10.5" transparent="true">
+    </a-plane>
+
+    <!--home free poster-->
+    <a-plane src="https://i.imgur.com/qwkNEps.jpg" height="1.3" width=".95" rotation="0 180 0" radius="2" side="double"
+             position="-8.92 6.14 -6.8">
+    </a-plane>
+
+    <!--les miserables poster-->
+    <a-plane src="https://i.imgur.com/IGLR0TB.jpg" height="1.3" width="1" rotation="0 180 0" radius="2" side="double"
+             position="-10 6.14 -6.8">
+    </a-plane>
+
+    <!--phantom poster-->
+    <a-plane src="https://i.imgur.com/W5NuI4M.jpg" height="1.3" width=".95" rotation="0 180 0" radius="2" side="double"
+             position="-11.07 6.14 -6.8">
+    </a-plane>
+
+    <!--glee poster-->
+    <a-plane src="https://i.imgur.com/Msvd8cZ.jpg" height="1.3" width=".94" rotation="0 180 0" radius="2" side="double"
+             position="-12.08 6.14 -6.8">
+    </a-plane>
+
+    <!--sweeny poster-->
+    <a-plane src="https://i.imgur.com/F8qsEtZ.jpg" height="1.3" width=".95" rotation="0 180 0" radius="2" side="double"
+             position="-13.1 6.14 -6.8">
+    </a-plane>
+
+    <!--phantom lyrics -->
+    <a-plane src="https://i.imgur.com/K29l23b.jpg" height=".95" width="1.65" rotation="0 90 0" radius="2" side="double"
+             position="-13.85 7.17 -8.9">
+    </a-plane>
+
+    <!--dont it feel good lyrics -->
+    <a-plane src="https://i.imgur.com/EpjfCJP.jpg" height=".95" width="1.65" rotation="0 90 0" radius="2" side="double"
+             position="-13.85 7.17 -11.056">
+    </a-plane>
+
+
+    <!--ready player one-->
+    <a-plane src="https://i.imgur.com/tCU2pvo.jpg" height="3" width="2" rotation="0 -90 0" radius="2" side="double"
+             position="-3.9 6.3 -5.098">
+    </a-plane>
+
+    <!--les mis lyrics -->
+    <a-plane src="https://i.imgur.com/U10A1FE.jpg" height=".945" width="2.235" rotation="0 -180 0" radius="2"
+             side="double" position="-5.99 7.17 -3.65">
+    </a-plane>
+      
+ <!--Center banner 
+      
+  <a-plane src="https://cdn.glitch.global/1d1d69ac-8e1e-4058-b9c0-cc2f034a0d0e/2023_Banter_Slide_LGBTQ.jpg?v=1695866077036" height="4.1" width="7.2" rotation="0 -66 0" radius="2" side="double"
+             position="9.1 1.58 9.1">-->
+<!--     </a-plane> -->
+ 
+    
+
+      </a-entity>    
+    </a-scene></div>
+    
+    <!--script that is needed to run the dance floor -->
+<script>
+    var changeColorRandom = function () {
+        var rand = function () {
+            return Math.floor(Math.random() * 255)
+        };
+        document.querySelector('#box1').setAttribute('material', 'color', 'rgb(' + rand() + ',' + rand() + ',' + rand() + ')');
+    }
+    setInterval(changeColorRandom, 900);
+</script>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <meta property="og:title" content="Banter Playground">
+    <meta property="og:description" content="A Physics Playground.">
+    <meta property="og:image" content="https://cdn.glitch.global/86f8c49b-3bad-4e83-9fc9-cd32d65dde2e/Untitled%20drawing%20(7).jpg?v=1701261524920">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <meta name="sidequest-space-verification" content="c7890b8b-c8e5-49cb-abbf-7e230f916310">
+    <script src="https://lunartiger.github.io/banter/assets/js/webcontent.js" sq-space="https://sidequestvr.com/space/1823" discord="https://discord.gg/bantaverse"></script>
+        <script>
+      AFRAME.registerComponent('respawn-the-ball', {
+        init: function () {
+          this.el.addEventListener('click', () => {
+            const ball = document.getElementById('grab_ball');
+            if(ball.object3D.id && window.isBanter){
+              addForce({x: 0, y: 0, z: 0}, 'force', ball.object3D.id);
+              moveRotation({x: 0, y: 0, z: 0}, ball.object3D.id);
+              movePosition({x: -3, y: 1.5, z: -10}, ball.object3D.id);
+            }
+          })
+        }
+      });
+       AFRAME.registerComponent('handle-click', {
+          init: function () {
+              let clicked = false;
+              // When you click on an element, run the animation on the parent element
+              this.el.addEventListener('click', () => {
+                clicked = !clicked;
+                if(clicked) {
+                  console.log(clicked, "gorillaPlayer");
+                  gorillaPlayer()
+                }else{
+                  console.log(clicked, "ungorillaPlayer");
+                  ungorillaPlayer()
+                }
+              })
+          }
+      });
+    </script>
+    <script>
+      // A simple aframe component to handle the click
+      AFRAME.registerComponent('handle-click', {
+          init: function () {
+              // When you click on an element, run the animation on the parent element
+              this.el.addEventListener('click', () => {
+                 openPage(this.data.url);
+              })
+          }
+      });
+    </script>
+  </head>
+  <body>
+      <div style="display: none;"><a-scene sq-assetbundle="android: https://cdn.sidequestvr.com/file/510843/devspace_prototype_android;
+                                                           desktop: https://cdn.sidequestvr.com/file/510844/devspace_prototype_standalonewindows;"
+               
+               sq-maxoccupancy="number: 30" sq-enablespiderman sq-refreshrate="rate:90"  sq-guestsallowed="true" sq-portalsenabled="true" sq-devtoolsenabled="true"  sq-friendpositionjoinallowed="false" embedded>
+        
+<!--         sq-enablespiderman -->
+
+          <script src="https://vidya-player.glitch.me/playlist.js" instance="bantpg" 
+               position="-12 8 -12.3" rotation="0 90 0" scale="7.155705 6.8 7.155705" volume="1" announce="false" spatial="false"
+              playlist="PLNaWDlBHafHlwSQBRNa_TLQFhdhukrKEM"></script>
+          <a-box position="-12.1 8 -12.3" rotation="0 90 0" scale="7.9 5.1 0.1" color="black"></a-box>
+
+      
+      <a-link href="https://mario-rec.glitch.me" position="-4 0 0" rotation="0 60 0"></a-link>
+            <a-box sq-collider sq-interactable handle-click color="red"  position="-4 2 -2" rotation="0 90 0" depth="0.05" width="1.5" height="0.4">
+        <a-text value="Monke Mode" position="0 0 0.06" align="center"></a-text>
+          </a-box>
+      
+<!--       <a-text
+          value="Beginner Parkour Help"
+          scale="1 1 1"
+          position="-4 2.4 0"
+          rotation="0 60 0"
+          align="center"
+      ></a-text> -->
+      
+
+       <!-- A 3d model of a christmas tree! -->
+<!--       <a-entity sq-collider="recursive: true" position="-7 0 -5" scale="40 40 40" gltf-model="https://cdn.glitch.global/7af396ad-5845-48f2-8441-58c6ffec91ad/low-poly_fangding_food_vessel.glb?v=1670411591590"></a-entity> -->
+<!--       <a-entity sq-collider="recursive: true" position="-6 0.5 3" scale="1 1 1" gltf-model="https://cdn.glitch.global/1da05fad-5fe8-478d-991a-735744a4c9a9/couch.glb?v=1670849689571"></a-entity> -->
+      
+<!--       <a-cylinder scale="24 10 20" position="0 5 0" side="back" color="#181818"></a-cylinder> -->
+<!--       <a-entity position="-10 0 0" rotation="0 90 0" scale="1.5 1.5 1.5">
+        <a-box scale="0.19 2 0.25" position="-1 1 0" color="brown"></a-box>
+        <a-box scale="2.5 0.2 0.3" position="0 2 0.05" color="brown"></a-box>
+        <a-box scale="0.19 2 0.25" position="1 1 0" color="brown"></a-box>
+
+        <a-box scale="0.45 2 0.1" position="-0.7 1 -0.01" rotation="0 15 0" color="#101010"></a-box>
+        <a-box scale="0.45 2 0.1" position="0.7 1 -0.01" rotation="0 -15 0" color="#101010"></a-box>
+        <a-box scale="1.8 0.4 0.1" position="0 1.7 0.046" color="black"></a-box>  
+         <a-video position="-0.05 1 0" scale="1.1 1.1 1.1" src="https://cdn.glitch.global/1da05fad-5fe8-478d-991a-735744a4c9a9/Fire%20-%2021531.mp4?v=1670847926007"></a-video> 
+         <a-box scale="1.8 2 0.1" position="0 1 -0.07" color="black"></a-box>  
+
+        <a-box scale="1.8 0.6 0.06" position="0 0.25 0.05" color="#181818"></a-box>  
+      </a-entity> -->
+<!--       
+      <a-cylinder sq-collider color="grey" repeat="5 5" scale="24 0.1 20" src="https://cdn.glitch.global/1da05fad-5fe8-478d-991a-735744a4c9a9/texture-seamless-wood-5.jpg" repeat="2 2"></a-cylinder>
+      <a-sound position="-10 0 0" autoplay="true" loop="true" volume="0.5" src="https://cdn.glitch.global/1da05fad-5fe8-478d-991a-735744a4c9a9/crackling-fire2.mp3?v=1670848925332"></a-sound> -->
+      
+    </a-scene></div>
+  </body>
+</html>

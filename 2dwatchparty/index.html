@@ -1,0 +1,76 @@
+
+<html>
+  <head>
+    <meta property="og:title" content="Games N' Chill">
+    <meta property="og:description" content="A place for hosting games n' chill & youtube viewing parties">
+    <meta property="og:image" content="https://cdn.glitch.global/5a721713-1857-4dc8-9c07-54af4ec561c6/image.jpg?v=1697571963593">  
+    <meta name="sidequest-space-verification" content="4efda39b-0b49-4122-85ac-511da90218ab">
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://lunartiger.github.io/banter/assets/js/webcontent.js" sq-space="https://sidequestvr.com/space/1206"></script>
+    <script>
+      // a simple aframe component to handle the click to open jackbox
+      AFRAME.registerComponent('jackbox-click', {
+          init: function () {
+              // When you click on an element, run the animation on the parent element
+              this.el.addEventListener('click', () => {
+                 openPage("https://jackbox.tv")
+              })
+          }
+      });
+    </script> 
+ 
+  </head>
+  
+  
+  <body>
+    
+   <div style="display: none;"><a-scene 
+             sq-spawnpoint="position: 1 0 -1 -90;"
+             sq-maxoccupancy="number: 25"
+	sq-assetbundle="android: https://benvr.co.uk/banter/tavern/medievaltavern_android?11;
+			desktop: https://benvr.co.uk/banter/tavern/medievaltavern_standalonewindows?9"
+            embedded>
+     
+     <!---- <script src="https://sq-community.glitch.me/gotoButton.js" position="8.25 1 10" rotation="0 180 0" scale="1"></script> <!---->
+      
+      
+      <!--> Enable for Screenshare Only 
+        <!---> <a-entity   id="theBrowser" 
+                sq-browser="url: https://screen-cast.glitch.me/?sid=3221097418709484; mipMaps: 1; pixelsPerUnit: 1600; mode: local;" position="7.415 2.08 16.45" announce="false" scale="5.5 5.5 5.5"></a-entity> <!---->
+     
+
+      <!-->Enable for JackBox Buttons Only -->
+        <!----> <a-box sq-collider sq-interactable jackbox-click color="#002100" position="3.415 2.99 16.45" rotation="0 180 0" depth="0.05" width="1.69" height="0.4">
+          <a-text value="open jackbox.tv" position="0 0 0.03" color="#0ff" align="center"></a-text>
+        </a-box> <!---->
+
+     
+     <!--> For direct URLS if needed  -->
+         <!---- <a-entity   id="theBrowser" 
+                sq-browser="url: https://www.youtube.com/embed/QdBZY2fkU-0?si=W3RDE-_nYVFrxdNn; mipMaps: 1; pixelsPerUnit: 1600; mode: local;" position="7.415 2.08 16.45" announce="false" scale="5.5 5.5 5.5"></a-entity> <!---->
+     
+     <!-- A box to click to goto a random space -->
+<a-box sq-collider sq-interactable sq-clickurl="url:banter://sq-community.glitch.me/random" color="#f00" position="1.2 0.3 -10" rotation="0 90 0" depth="0.05" width="2" height="0.666" scale="0.2 0.2 0.2">
+  <a-text value="do NOT click this!" position="0 0 0.03" color="#000" align="center"></a-text>
+</a-box>
+     
+
+<!-- Add this line to your space to add a list of portals there -->
+      <script src="https://vidya-player.glitch.me/portals.js" shape="line" spiral-tightness="0.2" show-events="true" spacing="2" position="5.5 0 -10" rotation="0 0 0" space-limit="3"></script>
+   
+           <!--> Enable for VideoJukebox Player Only 
+PL3Pymv3ROMslUwreYrrwVQ9GgcGs2GMIB just dance 
+
+-->
+      <!---- <script src="https://vidya-player.glitch.me/playlist.js" instance="tavernpartyplaylist" 
+              position="7.415 2.08 16.45" scale="4.8 4.8 4.8" rotation="0 180 0" announce="false" volume="10"
+              playlist="PLn5dD-TPivKIEqPq8u0ZLvP1e_5nh7Kfh"
+      
+      ></script> <!---->
+     
+
+     
+    </a-scene></div> 
+    
+  </body>
+</html>
