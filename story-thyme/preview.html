@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <script>
+      const loadingImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjYGBg+A8AAQQBAHAgZQsAAAAASUVORK5CYII=';
+      window.addEventListener("bantermessage", (e) => {
+        var ele = document.getElementById("bookReading");
+        if(e.detail.message === "loading") {
+          setTimeout(() => ele.setAttribute('src', loadingImage), 6000);
+          ele.classList.remove("show");
+          ele.classList.add("hide");
+        }else if(e.detail.message === "doit") {
+          ele.setAttribute('src', 'https://sq-sd.glitch.me/uploaded/bookReading.png?' + (new Date().getTime()));
+          ele.classList.add("show");
+          ele.classList.remove("hide");
+        }
+      });
+    </script>
+    <style>
+      html, body{
+        background: black;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+      #bookReading{
+        height: 100%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opacity 6s;
+      }
+      .show{
+        opacity: 1;
+      }
+      .hide{
+        opacity:0;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <img id="bookReading" class="show" src="https://sq-sd.glitch.me/uploaded/bookReading.png"/>
+  </body>
+</html>

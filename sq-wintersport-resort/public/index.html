@@ -1,0 +1,304 @@
+<html>
+  <head>
+    <!-- Add meta tags to show icon/title in the menu in banter -->
+    <meta property="og:title" content="A Winter Sport Resort">
+    <meta property="og:description" content="Don't break your bones!">
+    <meta property="og:image" content="https://hoehler.org/Banter/thumbnail.png">
+    
+    <meta name="sidequest-space-verification" content="0c1e0c74-f861-4c03-9e8b-b24b47e673cb"/>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="./client.js"></script>
+    <script src="https://lunartiger.github.io/banter/assets/js/webcontent.js" sq-space="https://sidequestvr.com/space/1194"></script>
+    
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F4P2MMHYN0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F4P2MMHYN0');
+</script>
+
+    
+  </head>
+  
+  <body>
+    <div style="display: none;"><a-scene sq-maxoccupancy="number: 25" 
+                                         sq-assetbundle="android: https://cdn.sidequestvr.com/file/527081/banter_wintersportresort_android; 
+                                                         desktop: https://cdn.sidequestvr.com/file/527082/banter_wintersportresort_standalonewindows" 
+                                         
+          
+                                         
+                             sq-kitbundle="android:https://cdn.glitch.global/b06126ea-d89f-4c04-b5a1-3cbc2ff6115b/kitbundle_android?v=1704632488284; 
+      desktop:https://cdn.glitch.global/b06126ea-d89f-4c04-b5a1-3cbc2ff6115b/kitbundle_standalonewindows?v=1704632488849;"  
+                                         
+                                         
+                                         
+      sq-refreshrate="rate:90" sq-spawnpoint="position: 0 0 0 180;" sq-clippingplane="near: 0.1; far: 687" sq-enablespiderman embedded>
+<!--       <a-box sq-collider sq-interactable handle-click color="green" position="0 -1 -4" depth="0.05" width="1.5" height="0.4">
+        <a-text value="click me" position="0 0 0.06" align="center"></a-text>
+      </a-box> -->
+
+      
+    <a-entity position="-7 0 1.5">
+      
+      <a-entity sq-kititem="item: assets/pool/table.prefab"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_01.prefab" position="0 1 0.66"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_02.prefab" position="0.03 1 0.72"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_09.prefab" position="0.06 1 0.78"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_03.prefab" position="0.09 1 0.84"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_10.prefab" position="0.12 1 0.9"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_11.prefab" position="0.06 1 0.9"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_04.prefab" position="0 1 0.9"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_12.prefab" position="-0.06 1 0.9"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_05.prefab" position="-0.12 1 0.9"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_13.prefab" position="-0.09 1 0.84"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_06.prefab" position="-0.06 1 0.78"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_14.prefab" position="-0.03 1 0.72"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_07.prefab" position="-0.03 1 0.84"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_15.prefab" position="0.03 1 0.84"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_08.prefab" position="0 1 0.78"></a-entity>
+    <a-entity sq-kititem="item: assets/pool/ball_00.prefab" position="0 1 -0.9"></a-entity>
+    <a-entity id="theCue" sq-kititem="item: assets/pool/cuenew.prefab" position="-3.1 1.15 0.5" rotation="90 0 0"></a-entity>
+      
+      <a-box sq-collider sq-interactable take-over color="green"  position="0 0.8 1.55" rotation="15 0 0" depth="0.05" width="0.8" height="0.2">
+        <a-text value="Take a Go" position="0 0 0.026" scale="0.65 0.65 0.65" align="center"></a-text>
+      </a-box>
+      
+      
+      <a-box sq-collider sq-interactable reset-cue-ball color="green"  position="-0.5 0.8 -1.55" rotation="15 180 0" depth="0.05" width="0.5" height="0.2">
+        <a-text value="Reset Cue" position="0 0 0.026" scale="0.4 0.4 0.4" align="center"></a-text>
+      </a-box>
+      <a-box sq-collider sq-interactable reset-all-balls color="green"  position="0.5 0.8 -1.55" rotation="15 180 0" depth="0.05" width="0.5" height="0.2">
+        <a-text value="Reset All" position="0 0 0.026" scale="0.4 0.4 0.4" align="center"></a-text>
+      </a-box>
+   </a-entity> 
+      
+      
+      <a-cylinder visible="false" sq-triggercollider sq-capsulecollider="center: 6 0 -9; radius: 0.5; height: 2;" sq-gravityfield="gravity: 0 -4 0" color="green" material="transparent: true; opacity: 0.5; side: double" rotation="0 0 0" position="-58 22 80" scale="10 45 10"></a-cylinder>
+       
+      <a-sound  sound="positional:false" autoplay="true" loop="true"  volume="0.005" src="https://cdn.glitch.global/be7306b6-2e7e-4901-abf8-d5221790a499/WintersportMusic.mp3?v=1672506816443"></a-sound>
+      
+      <!-- Leaderboards -->
+      
+<!--       <a-entity sq-cockpit="whoToShow: everyoneelse" sq-capsulecollider="radius: 0.1; height: 1;" position="0 -0.5 0" sq-grabbable ></a-entity> -->
+
+<!-- ScoreBoard -->
+     <a-text class="scoreboard-score" color="#c2d200" align="center" value="-" baseline="center" position="28.611 5.15 34.447" rotation="10.795 -31.3 0" scale="8 8 8"></a-text>
+     <a-text color="grey" align="center" value="Your Score" baseline="center" position="28.48 6.53 34.68" rotation="10.795 -31.3 0" scale="2 2 2"></a-text>
+
+     <a-text class="scoreboard-score" color="#c2d200" align="center" value="-" baseline="center" position="28.49 5.15 29.33" rotation="11.4 -151.1 0" scale="8 8 8"></a-text>
+     <a-text color="grey" align="center" value="Your Score" baseline="center" position="28.35 6.53 29.1" rotation="11.4 -151.1 0" scale="2 2 2"></a-text>
+
+     <a-text class="scoreboard-score" color="#c2d200" align="center" value="-" baseline="center" position="33.25 5.15 31.84" rotation="13.9 89 0" scale="8 8 8"></a-text>
+     <a-text color="grey" align="center" value="Your Score" baseline="center" position="33.501 6.53 31.89" rotation="13.9 89 0" scale="2 2 2"></a-text>
+
+      
+<!-- Speedster -->
+     <a-entity color="darkgreen" rotation="0 -90 0" position="10.2 1.7 -2.76"  width="1.5" height="1" depth="0.05">
+        <a-text id="speedsterLeftText" color="grey"  value="Loading..." baseline="top" position="-0.65 0.475 -0.019" scale="0.45 0.45 0.45"></a-text>
+        <a-text id="speedsterRightText" value="" position="0.65 0.475 -0.019" baseline="top" align="right" scale="0.45 0.45 0.45"></a-text>
+      </a-entity>
+      
+<!-- Leap Of faith -->
+      <a-entity color="darkgreen" rotation="0 -90 0" position="10.2 1.7 -4.58"  width="1.5" height="1" depth="0.05">
+        <a-text id="lofLeftText" color="grey" baseline="top" value="Loading..." position="-0.65 0.475 -0.019" scale="0.45 0.45 0.45"></a-text>
+        <a-text id="lofRightText" value="" baseline="top" position="0.65 0.475 -0.019" align="right" scale="0.45 0.45 0.45"></a-text>
+      </a-entity>
+      
+<!-- SlideQuest -->
+      <a-entity color="darkgreen" rotation="0 -90 0" position="10.2 1.7 -0.945"  width="1.5" height="1" depth="0.05">
+        <a-text id="slideQuestLeftText" color="grey" baseline="top" value="Loading..." position="-0.65 0.475 -0.019" scale="0.45 0.45 0.45"></a-text>
+        <a-text id="slideQuestRightText" value="" baseline="top" position="0.65 0.475 -0.019" align="right" scale="0.45 0.45 0.45"></a-text>
+      </a-entity>
+      
+<!-- Kids Slide -->
+      <a-entity color="darkgreen" rotation="0 0 0" position="-3.6 1.7 -18.6"  width="1.5" height="1" depth="0.05">
+        <a-text id="kidsLeftText" value="Loading..." color="grey" baseline="top" position="-0.55 0.475 -0.019" scale="0.4 0.4 0.4"></a-text>
+        <a-text id="kidsRightText" value="" position="0.49 0.475 -0.019" baseline="top" align="right" scale="0.4 0.4 0.4"></a-text>
+      </a-entity>
+      
+<!-- Bump and Jump -->
+      <a-entity color="darkgreen" rotation="0 -90 0" position="10.2 1.7 0.88"  width="1.5" height="1" depth="0.05">
+        <a-text id="bumpJumpLeftText" value="Loading..." color="grey" baseline="top" position="-0.65 0.475 -0.019" scale="0.45 0.45 0.45"></a-text>
+        <a-text id="bumpJumpRightText" value="" position="0.65 0.475 -0.019" baseline="top" align="right" scale="0.45 0.45 0.45"></a-text>
+      </a-entity>
+      
+<!-- SlideWorks -->
+      <a-entity color="darkgreen" rotation="0 -90 0" position="10.2 1.7 2.7"  width="1.5" height="1" depth="0.05">
+        <a-text id="slideWorksLeftText" value="Loading..." color="grey" baseline="top" position="-0.65 0.475 -0.019" scale="0.45 0.45 0.45"></a-text>
+        <a-text id="slideWorksRightText" value="" position="0.65 0.475 -0.019" baseline="top" align="right" scale="0.45 0.45 0.45"></a-text>
+      </a-entity>
+      
+<!-- Frosty -->
+      <a-entity color="darkgreen" rotation="0 -90 0" position="10.2 1.7 -7.49"  width="1.5" height="1" depth="0.05">
+        <a-text id="frostyLeftText" value="Loading..." color="grey"  baseline="top" position="-0.65 0.465 -0.019" scale="0.45 0.45 0.45"></a-text>
+        <a-text id="frostyRightText" value="" position="0.65 0.465 -0.019" baseline="top" align="right" scale="0.45 0.45 0.45"></a-text>
+      </a-entity>
+      
+      
+<!-- End Of Leaderboards -->
+      
+  
+      
+      
+<!-- Kids -->
+      <a-entity id="KidsJumpStart" set-start="sound: https://cdn.glitch.global/b06126ea-d89f-4c04-b5a1-3cbc2ff6115b/446142__justinvoke__race-start.mp3?v=1688058118033" sq-boxcollider sq-triggercollider position="7.7 5 -3.65" rotation="0 0 0" scale="1 2 1"></a-entity> 
+     
+      <a-entity id="KidsJumpEnd" ride-finish="ride: kids; rideStart: KidsJumpStart" sq-boxcollider sq-triggercollider color="black" material="transparent: true; opacity: 0.5; side: double" rotation="0 0 0" position="-1 1 -17.8" scale="2 2 1"></a-entity> 
+
+      
+<!-- Bump and Jump -->
+      <a-entity  id="BumpJumpStart" set-start="sound: https://cdn.glitch.global/b06126ea-d89f-4c04-b5a1-3cbc2ff6115b/446142__justinvoke__race-start.mp3?v=1688058118033" sq-boxcollider sq-triggercollider color="black" material="transparent: true; opacity: 0.5; side: double" position="-53 95 236.5" rotation="0 110 0" scale="1 5 16"></a-entity> 
+     
+      <a-entity id="BumpJumpEnd" ride-finish="ride: bumpJump; rideStart: BumpJumpStart" sq-boxcollider sq-triggercollider color="black" material="transparent: true; opacity: 0.5; side: double" rotation="0 50 -30" position="45 15 -9" scale="1 3 3"></a-entity> 
+
+      
+<!-- Frosty -->
+      <a-entity  id="FrostyStart" set-start="sound: https://cdn.glitch.global/b06126ea-d89f-4c04-b5a1-3cbc2ff6115b/446142__justinvoke__race-start.mp3?v=1688058118033" sq-boxcollider sq-triggercollider color="black" material="transparent: true; opacity: 0.5; side: double" rotation="0 30 0" position="-64 0 82" scale="35 10 35"></a-entity> 
+      
+      <a-entity  id="FrostyEnd" ride-finish="ride: frosty; rideStart: FrostyStart"  sq-boxcollider sq-triggercollider color="black" material="transparent: true; opacity: 0.5; side: double" rotation="0 30 0" position="-55 45 76" scale="5 5 5"></a-entity> 
+  
+      
+<!-- SlideWorks -->
+      <a-entity id="SlideWorksStart" set-start="sound: https://cdn.glitch.global/b06126ea-d89f-4c04-b5a1-3cbc2ff6115b/56898__syna-max__wilhelm_scream.mp3?v=1688050517693" sq-boxcollider sq-triggercollider color="black" material="transparent: true; opacity: 0.5; side: double" position="-46.5 91 278" rotation="0 -20 0" scale="16 1 10"></a-entity> 
+      
+      <a-entity  slideworks-target="score: 130;" sq-boxcollider sq-triggercollider position="0 13 46.3" scale="3 1 1"></a-entity> 
+      <a-cylinder  slideworks-target="score: 100;" sq-collider sq-triggercollider color="purple" material="transparent: true; opacity: 0; side: double" position="0 6.5 46.38" scale="2 11 2"></a-cylinder> 
+      <a-cylinder  slideworks-target="score: 80;" sq-collider sq-triggercollider color="yellow" material="transparent: true; opacity: 0; side: double" position="0 0.5 46.38" scale="5.6 1 5.6"></a-cylinder> 
+      <a-cylinder  slideworks-target="score: 50;"  sq-collider sq-triggercollider color="red" material="transparent: true; opacity: 0; side: double" position="0 0.3 46.38" scale="10.4 0.6 10.4"></a-cylinder> 
+      <a-cylinder  slideworks-target="score: 30;"  sq-collider sq-triggercollider color="blue" material="transparent: true; opacity: 0; side: double" position="0 0.14 46.38" scale="16.5 0.3 16.4"></a-cylinder> 
+
+<!-- Speedster -->
+      <a-entity id="SpeedsterStart"  set-start="sound: https://cdn.glitch.global/b06126ea-d89f-4c04-b5a1-3cbc2ff6115b/446142__justinvoke__race-start.mp3?v=1688058118033" sq-boxcollider sq-triggercollider color="black" material="transparent: true; opacity: 0.5; side: double" position="-20.5 95 263" rotation="0 -25 0" scale="1 5 9"></a-entity> 
+
+      <a-entity id="SpeedsterEnd"  ride-finish="ride: speedster; rideStart: SpeedsterStart" sq-boxcollider sq-triggercollider color="black" material="transparent: true; opacity: 0.5; side: double" rotation="0 70 30" position="-11.5 6.5 86" scale="1 3 3"></a-entity> 
+       
+<!-- SlideQuest -->
+      <a-entity id="SlideQuestStart"  set-start="sound: https://cdn.glitch.global/b06126ea-d89f-4c04-b5a1-3cbc2ff6115b/446142__justinvoke__race-start.mp3?v=1688058118033" sq-boxcollider sq-triggercollider color="black" material="transparent: true; opacity: 0.5; side: double" position="-59.5 95 250.7" scale="1 5 12"></a-entity> 
+     
+      <a-entity id="SlideQuestEnd"  ride-finish="ride: slideQuest; rideStart: SlideQuestStart" sq-boxcollider sq-triggercollider color="black" material="transparent: true; opacity: 0.5; side: double" rotation="0 22 0" position="-9.2 -2 15" scale="3.5 4 9"></a-entity> 
+
+<!-- Leap Of Faith -->
+      <a-entity id="LeapOfFaithStart"  set-start="sound: https://cdn.glitch.global/b06126ea-d89f-4c04-b5a1-3cbc2ff6115b/187409__mazk1985__robot_go.mp3?v=1688058036711" sq-boxcollider sq-triggercollider color="black" material="transparent: true; opacity: 0.5; side: double" position="-33.5 95 254.5" rotation="0 63 0" scale="1 7 5.5"></a-entity> 
+      
+      
+      <a-entity id="FartSound" fart sq-boxcollider sq-triggercollider color="black" material="transparent: true; opacity: 0.5; side: double" rotation="0 0 -90" position="-10.36 5.78 82.92" scale="1 3 3"></a-entity> 
+
+      
+      
+      <a-entity position="0 0.8 0"> 
+        <!-- All the boxes for the leap of faith -->
+        <a-entity id="LOF_55" lof-part sq-boxcollider sq-triggercollider position="15.17 33.1 153.51" rotation="-0.14 -115.35 35.28" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_56" lof-part sq-boxcollider sq-triggercollider position="15.52 32.52 152.76" rotation="-0.15 -115.35 34.95" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_57" lof-part sq-boxcollider sq-triggercollider position="15.85 31.95 152.02" rotation="-0.14 -115.35 34.99" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_58" lof-part sq-boxcollider sq-triggercollider position="16.18 31.38 151.26" rotation="-0.15 -115.35 34.96" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_59" lof-part sq-boxcollider sq-triggercollider position="16.07 30.79 150.34" rotation="-0.05 -115.29 36.63" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_60" lof-part sq-boxcollider sq-triggercollider position="16.97 30.18 149.88" rotation="-0.14 -115.35 36.76" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_61" lof-part sq-boxcollider sq-triggercollider position="16.78 29.59 148.9" rotation="-0.05 -115.29 36.82" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_62" lof-part sq-boxcollider sq-triggercollider position="17.69 28.99 148.45" rotation="-0.14 -115.35 36.92" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_63" lof-part sq-boxcollider sq-triggercollider position="17.44 28.39 147.44" rotation="-0.05 -115.29 36.74" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_64" lof-part sq-boxcollider sq-triggercollider position="18.36 27.87 146.93" rotation="-0.14 -115.35 36.73" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+
+        <a-entity id="LOF_65" lof-part sq-boxcollider sq-triggercollider position="18.2 27.27 145.97" rotation="-0.05 -115.29 36.88" scale="1 0.3 35" color="blue" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+
+        <a-entity id="LOF_66" lof-part sq-boxcollider sq-triggercollider position="19.16 26.66 145.54" rotation="-0.13 -115.35 38.29" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_67" lof-part sq-boxcollider sq-triggercollider position="18.81 26.05 144.51" rotation="-0.05 -115.29 38.09" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_68" lof-part sq-boxcollider sq-triggercollider position="19.78 25.43 144.1" rotation="-0.13 -115.35 38.44" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_69" lof-part sq-boxcollider sq-triggercollider position="20.16 24.81 143.41" rotation="-0.13 -115.35 38.3" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_70" lof-part sq-boxcollider sq-triggercollider position="19.81 24.19 142.38" rotation="-0.04 -115.29 38.17" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_71" lof-part sq-boxcollider sq-triggercollider position="20.15 23.57 141.67" rotation="-0.04 -115.28 38.3" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_72" lof-part sq-boxcollider sq-triggercollider position="21.21 22.95 141.3" rotation="-0.13 -115.35 38.23" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_73" lof-part sq-boxcollider sq-triggercollider position="21.45 22.33 140.55" rotation="-0.13 -115.35 38.34" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_74" lof-part sq-boxcollider sq-triggercollider position="21.62 21.72 139.75" rotation="-0.14 -115.35 36.34" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_75" lof-part sq-boxcollider sq-triggercollider position="20.55 21.13 138.36" rotation="-359.88 -115.16 36.65" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_76" lof-part sq-boxcollider sq-triggercollider position="20.82 20.53 137.59" rotation="-359.88 -115.16 36.07" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_77" lof-part sq-boxcollider sq-triggercollider position="21.23 19.94 136.89" rotation="-359.88 -115.16 36.66" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_78" lof-part sq-boxcollider sq-triggercollider position="21.6 19.34 136.18" rotation="-359.88 -115.16 36.49" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_79" lof-part sq-boxcollider sq-triggercollider position="21.84 18.75 135.41" rotation="-359.88 -115.16 36.26" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+
+        <a-entity id="LOF_80" lof-part sq-boxcollider sq-triggercollider position="22.24 18.16 134.7" rotation="-359.88 -115.16 36.26" scale="1 0.3 35" color="red" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+
+        <a-entity id="LOF_81" lof-part sq-boxcollider sq-triggercollider position="22.56 17.56 133.96" rotation="-359.88 -115.16 36.71" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_82" lof-part sq-boxcollider sq-triggercollider position="22.97 16.97 133.27" rotation="-359.88 -115.16 36.35" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_83" lof-part sq-boxcollider sq-triggercollider position="23.25 16.38 132.51" rotation="-359.88 -115.16 36.41" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_84" lof-part sq-boxcollider sq-triggercollider position="23.59 15.78 131.78" rotation="-359.88 -115.16 36.64" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_85" lof-part sq-boxcollider sq-triggercollider position="23.86 15.19 131.02" rotation="-359.88 -115.16 35.94" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_86" lof-part sq-boxcollider sq-triggercollider position="24.38 14.62 130.36" rotation="-359.89 -115.17 34.34" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_87" lof-part sq-boxcollider sq-triggercollider position="24.89 14.05 129.68" rotation="-359.88 -115.17 34.39" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_88" lof-part sq-boxcollider sq-triggercollider position="25.19 13.49 128.92" rotation="-359.88 -115.17 34.42" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_89" lof-part sq-boxcollider sq-triggercollider position="25.59 12.92 128.19" rotation="-359.88 -115.17 34.39" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_90" lof-part sq-boxcollider sq-triggercollider position="25.91 12.36 127.43" rotation="-359.88 -115.17 34.21" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.5; side: double" ></a-entity>
+        <a-entity id="LOF_91" lof-part sq-boxcollider sq-triggercollider position="26.3 11.79 126.7" rotation="-359.88 -115.17 34.4" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_92" lof-part sq-boxcollider sq-triggercollider position="26.58 11.23 125.92" rotation="-359.88 -115.17 34.65" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_93" lof-part sq-boxcollider sq-triggercollider position="26.95 10.66 125.18" rotation="-359.88 -115.17 34.3" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_94" lof-part sq-boxcollider sq-triggercollider position="27.35 10.1 124.46" rotation="-359.88 -115.17 34.61" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_95" lof-part sq-boxcollider sq-triggercollider position="27.66 9.53 123.69" rotation="-359.88 -115.17 34.44" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_96" lof-part sq-boxcollider sq-triggercollider position="28.42 9.02 123.11" rotation="-359.89 -115.19 30.8" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_97" lof-part sq-boxcollider sq-triggercollider position="28.8 8.51 122.33" rotation="-359.89 -115.19 30.87" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_98" lof-part sq-boxcollider sq-triggercollider position="29.29 8.01 121.6" rotation="-359.89 -115.19 29.28" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_99" lof-part sq-boxcollider sq-triggercollider position="29.65 7.53 120.81" rotation="-359.89 -115.19 29.18" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+
+        <a-entity id="LOF_100" lof-part sq-boxcollider sq-triggercollider position="30.29 7.04 120.14" rotation="-359.9 -115.2 27.71" scale="1 0.3 35" color="yellow" material="transparent: true; opacity: 0; side: double" ></a-entity>
+
+        <a-entity id="LOF_101" lof-part sq-boxcollider sq-triggercollider position="30.53 6.58 119.28" rotation="-359.9 -115.2 27.42" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0; side: double" ></a-entity>
+        <a-entity id="LOF_102" lof-part sq-boxcollider sq-triggercollider position="30.91 6.12 118.47" rotation="-359.9 -115.2 27.46" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0; side: double" ></a-entity>
+        <a-entity id="LOF_103" lof-part sq-boxcollider sq-triggercollider position="31.51 5.71 117.94" rotation="-359.9 -115.21 25.3" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_104" lof-part sq-boxcollider sq-triggercollider position="31.83 5.29 117.09" rotation="-359.9 -115.21 25.56" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_105" lof-part sq-boxcollider sq-triggercollider position="32.36 4.8 116.34" rotation="-359.91 -115.21 22.63" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_106" lof-part sq-boxcollider sq-triggercollider position="32.75 4.42 115.51" rotation="-359.91 -115.21 22.72" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_107" lof-part sq-boxcollider sq-triggercollider position="33.22 4.03 114.71" rotation="-359.91 -115.21 22.98" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_108" lof-part sq-boxcollider sq-triggercollider position="33.58 3.7 113.81" rotation="-359.92 -115.22 19.53" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_109" lof-part sq-boxcollider sq-triggercollider position="34.06 3.35 113" rotation="-359.92 -115.22 19.87" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_110" lof-part sq-boxcollider sq-triggercollider position="34.46 3.01 112.15" rotation="-359.92 -115.22 19.89" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_111" lof-part sq-boxcollider sq-triggercollider position="34.79 2.76 111.21" rotation="-359.93 -115.23 16.69" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        
+        <a-entity id="LOF_112" lof-part sq-boxcollider sq-triggercollider position="35.35 2.48 110.42" rotation="-359.93 -115.23 16.68" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_113" lof-part sq-boxcollider sq-triggercollider position="35.93 2.16 109.62" rotation="-359.94 -115.24 14.07" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_114" lof-part sq-boxcollider sq-triggercollider position="36.09 1.86 108.63" rotation="-359.94 -115.23 13.41" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_115" lof-part sq-boxcollider sq-triggercollider position="36.6 1.66 107.79" rotation="-359.94 -115.24 13.85" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_116" lof-part sq-boxcollider sq-triggercollider position="37.03 1.4 106.9" rotation="-359.96 -115.24 10.48" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_117" lof-part sq-boxcollider sq-triggercollider position="37.37 1.21 105.98" rotation="-359.96 -115.24 10.46" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_118" lof-part sq-boxcollider sq-triggercollider position="37.86 1.02 105.12" rotation="-359.96 -115.24 10.16" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_119" lof-part sq-boxcollider sq-triggercollider position="38.31 0.86 104.25" rotation="-359.95 -115.24 10.78" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_120" lof-part sq-boxcollider sq-triggercollider position="38.51 0.67 103.22" rotation="-359.97 -115.25 7.19" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_121" lof-part sq-boxcollider sq-triggercollider position="39.1 0.54 102.41" rotation="-359.97 -115.25 7.43" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_122" lof-part sq-boxcollider sq-triggercollider position="39.52 0.42 101.51" rotation="-359.97 -115.25 7.37" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_123" lof-part sq-boxcollider sq-triggercollider position="39.7 0.38 100.46" rotation="-359.98 -115.25 4.36" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_124" lof-part sq-boxcollider sq-triggercollider position="40.04 0.31 99.52" rotation="-359.98 -115.25 4.37" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_125" lof-part sq-boxcollider sq-triggercollider position="40.54 0.23 98.65" rotation="-359.98 -115.25 4.35" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_126" lof-part sq-boxcollider sq-triggercollider position="40.87 0.16 97.71" rotation="-359.98 -115.25 4.31" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_127" lof-part sq-boxcollider sq-triggercollider position="41.27 0.1 96.77" rotation="-359.99 -115.25 1.74" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_128" lof-part sq-boxcollider sq-triggercollider position="41.69 0.09 95.86" rotation="-359.99 -115.25 1.53" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_129" lof-part sq-boxcollider sq-triggercollider position="42.04 0.04 94.93" rotation="-359.99 -115.25 1.74" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+        <a-entity id="LOF_130" lof-part sq-boxcollider sq-triggercollider position="42.46 0.01 94.02" rotation="-359.99 -115.25 1.73" scale="1 0.3 35" color="black" material="transparent: true; opacity: 0.0; side: double" ></a-entity>
+
+
+      </a-entity> 
+         
+      
+<!-- Moving Platform 
+      <a-entity gltf-model="https://cdn.glitch.global/b06126ea-d89f-4c04-b5a1-3cbc2ff6115b/FloatingPlatform%20(1).glb?v=1674666830087" sq-syncloop="interval: 120;" add-moving-platform position="-16.768 3.4795 8.087" sq-nonconvexcollider="recursive: true"></a-entity>
+      -->
+      
+<!-- Portals -->
+      <a-link rotation="0 20 0" position="13.727 3.73 -4.078" title="The Time Warp Cabaret" href="https://timewarp-cabaret.glitch.me" ></a-link>
+      <a-link rotation="0 -15 0" position="15.565 3.73 -4.184768" title="Mars One" href="https://marsone.glitch.me" ></a-link>
+      <a-link rotation="0 -45 0" position="16.911 3.73 -3.464" title="Outset Island" href="https://ww-outset-island.glitch.me" ></a-link>
+      <a-link rotation="0 -90 0" position="17.74149 3.73 -1.960078" title="ISS" href="https://iss-interior.glitch.me" ></a-link>
+      <a-link rotation="0 245 0" position="17.581 3.73 -0.287" title="Meditation Clearance" href="https://meditationclearance.glitch.me" ></a-link>
+      <a-link rotation="0 210 0" position="16.49 3.73 1.02" title="Slipstream Island" href="https://slipstream.glitch.me" ></a-link>
+      <a-link rotation="0 180 0" position="15.00488 3.73 1.470955" title="Toyhouse by BenG" href="https://benvr.co.uk/banter/toyhouse/" ></a-link>
+      <a-link rotation="0 140 0" position="13.34024 3.73 0.935995" title="Poolhouse" href="https://b-poolhouse.glitch.me" ></a-link>
+ 
+<!-- Other Stuff -->
+      
+    
+<!--      This lines up pretty well with the bowl, keeping for reference
+ <a-cylinder sq-collider sq-triggercollider sq-gravityfield="gravity: 0 -100 0" color="black" material="transparent: true; opacity: 0.5; side: double" position="-53 32 130" scale="14 12 14"></a-cylinder>  -->
+    </a-scene></div>
+
+  </body>
+</html>

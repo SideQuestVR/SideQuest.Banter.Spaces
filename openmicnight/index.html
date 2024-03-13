@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <meta property="og:title" content="Open Mic Night">
+    <meta property="og:description" content="Location for Open Mic Night">
+    <meta property="og:image" content="https://cdn.glitch.global/f9e383f2-48fd-496a-bd1a-6d2a3b72f86b/Open_Mic_Night_copy.png?v=1696292603666">  
+    <meta name="sidequest-space-verification" content="236714c1-fbaa-4807-948a-172d2ecd236c">
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://lunartiger.github.io/banter/assets/js/webcontent.js" sq-space="https://sidequestvr.com/space/1625" discord="https://discord.com/invite/ednyAMUZSy"></script>
+    
+    <!---- <script src="https://benvr.co.uk/banter/avatars.js" menu="true"></script> <!---->
+    
+    
+  </head>
+  <body>
+    
+   <div style="display: none;"><a-scene 
+             sq-spawnpoint="position: 1 0 -1 -90;"
+             sq-maxoccupancy="number: 40" sq-friendpositionjoinallowed="false"
+	sq-assetbundle="android: https://cdn.sidequestvr.com/file/484260/samplescene_android;
+			            desktop: https://cdn.sidequestvr.com/file/484261/samplescene_standalonewindows"
+  sq-kitbundle="android: https://hoehler.org/Banter/AssetBundle/Screens_kitbundle_android; 
+                desktop: https://hoehler.org/Banter/AssetBundle/Screens_kitbundle_standalonewindows;"   
+                                        
+            embedded>
+      
+     
+ <!--info banner -->
+      
+  <a-plane src="https://cdn.glitch.global/f9e383f2-48fd-496a-bd1a-6d2a3b72f86b/openmic%20nightsign.png?v=1708254700629" height="1.5" width="2" rotation="0 -90 0" radius="2" side="double"
+             position="10.3 1.58 -1.1">
+    </a-plane>
+
+     
+     position="1 7 -10"
+
+<!-- old save
+            Enable for VideoJukebox Player Only
+      <script src="https://vidya-player.glitch.me/playlist.js" instance="openmicplaylist" 
+              position="0 7 11" scale="10 10 10" rotation="0 180 0" volume="7"
+              playlist="PL3Pymv3ROMskO9Thvx-PJz9kycJxfCbx6" announce="false"
+      
+      ></script> -->
+  
+     
+     <!----> <script src="https://vidya-player.glitch.me/karaoke.js" instance="open mic"
+              position="0 -5 8" scale=".95 .95 .95" rotation="-90 0 0" volume="50" announce="false" one-for-each-instance="false" 
+             button-position="10.2 .5 -1.05" button-rotation="0 -90 0" button-scale="1 1 1"
+             singer-button-position="-2.039 -5 0.718" singer-button-rotation="-90 0 180"
+              box-trigger-exit-enabled="false" box-trigger-enter-enabled="false" box-trigger-scale="8 5 8"></script><!---->
+      
+      
+        <!-- Camera to capture the video Player ( Needs the same position as the Video Player) -->
+        <a-entity sq-kititem="item: assets/prefabs/screens/videocamera.prefab" position="0 -5 8"></a-entity>
+      
+      
+            <!-- left  Screen with a Frame  -->
+        <a-entity sq-kititem="item: assets/prefabs/screens/defaultscreen.prefab" position="5.5 .9 11.2" rotation="0 180 0" scale="0.25 0.25 0.25"></a-entity> 
+     
+          <!-- right Screen with a Frame  -->
+        <a-entity sq-kititem="item: assets/prefabs/screens/defaultscreen.prefab" position="-5.4 .9 11.2" rotation="0 180 0" scale="0.25 0.25 0.25"></a-entity> 
+      
+      <!-- A Mirror -->
+      <a-entity sq-kititem="item: assets/prefabs/screens/defaultscreen.prefab" position="0 1.4 8.238" rotation="-19.219 0 0" scale="0.05 0.05 0.05"></a-entity> 
+     
+     
+     
+       
+     
+    </a-scene></div>
+  </body>
+</html>

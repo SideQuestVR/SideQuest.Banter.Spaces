@@ -1,0 +1,214 @@
+
+<html>
+  <head>
+    <meta property="og:title" content="Story Time">
+    <meta property="og:description" content="A book pile for reading">
+    <meta property="og:image" content="https://lunartiger.github.io/banter/story-time/assets/img/banner.png">
+    <meta property="og:url" content="https://story-thyme.glitch.me">
+    <meta name="theme-color" content="#696969">
+    <link href="https://lunartiger.github.io/banter/assets/css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://lunartiger.github.io/banter/assets/js/webcontent.js" my-spaces="https://lunartiger.github.io/banter" sq-space="https://sdq.st/story-time" discord="https://discord.gg/DbQF7ze"></script> <!-- this builds out the 2D page and populates it with info -->
+      
+   <script>
+     let currentActiveBook = null;
+     let isThron = false, isTableOn = false, isStarted = false, aid = "bookReading";
+     window.loadDoneCallback = () => {
+       setTimeout(() => window.loaded = true, 20000);
+     }
+     const toggleSpeech = ()=>{
+        if(isStarted) {
+          stopSTT(aid);
+          isStarted = false;
+        }else{
+          startSTT();
+          isStarted = true;
+        }
+     }
+     buttonPressCallback = (button) => {
+        if(button === "RightPrimary") {
+          // toggleSpeech(); setVisible=true
+        }
+     }
+     aframeTriggerCallback = (msg, isLocal) => {
+        if (msg.startsWith("Book_")) {
+          setPublicSpaceProp("currentActiveBook", msg);
+        }else{
+          switch(msg) { 
+            case "ThronToggle":
+              isThron = !isThron;
+              setPublicSpaceProp("thron-on", isThron ? 1 : 0);
+              break; 
+            case "ToggleSpeech":
+              toggleSpeech();
+              break; 
+            case "StartReading":
+              setPublicSpaceProp("book-on", 1);
+              // window.sendAframeEvent(Book_Show.object3D.id, true, "BookOpenTrigger");
+              break; 
+            case "EndReading":
+              setPublicSpaceProp("book-on", 0);
+              // window.sendAframeEvent(Book_Show.object3D.id, true, "BookCloseTrigger");
+              break; 
+          }
+        }
+      };
+      addEventListener("DOMContentLoaded", () => {if(window.isBanter){ // load the books and stuff for Banter
+         const thron = document.querySelector("#thron");
+         const imageToShow = document.querySelector("#imageToShow");
+         const Book_Show = document.querySelector("#Book_Show");
+         let isFirstRun = false;
+         AframeInjection.addEventListener('spaceStateChange', async e => {
+           console.log("waiting for loaded")
+          await window.AframeInjection.waitFor(window, "loaded");
+           console.log("changes")
+
+          e.detail.changes.forEach(change => {
+            switch(change.property) {
+              case "currentActiveBook":
+                if (currentActiveBook && currentActiveBook !== change.newValue) {
+                  window.sendAframeEvent(document.getElementById(currentActiveBook).object3D.id, false);
+                  console.log(`Deactivating ${currentActiveBook}`);
+                }
+                currentActiveBook = change.newValue;
+                window.sendAframeEvent(document.getElementById(currentActiveBook).object3D.id, true);
+                console.log(`Activating ${currentActiveBook}`);
+                break;
+              case "thron-on":
+                isThron = change.newValue === "1";
+                window.sendAframeEvent(thron.object3D.id, isThron);
+                break;
+              case "book-on":
+                if(!isFirstRun || change.newValue === "1") {
+                  window.sendAframeEvent(Book_Show.object3D.id, true, change.newValue === "1" ? "BookOpenTrigger" : "BookCloseTrigger");
+                }
+                isFirstRun = false;
+                break;
+            }
+          });
+         });
+         window.transcriptionCallback = (id, msg) => {
+            oneShot({textUpdate: true}, true);
+           imageToShow.components['sq-browser'].runActions([{actionType: "postmessage", strParam1: "loading"}]);
+           setTimeout(() => window.sendAframeEvent(Book_Show.object3D.id, true, "BookPageTurnTrigger"), 6000);
+            oneShot({loadingUpdate: id }, true);
+            const image = new Image();
+            image.onload = () => {
+              imageToShow.components['sq-browser'].runActions([{actionType: "postmessage", strParam1: "doit"}]);
+              oneShot({imageUpdate: true }, true);
+            };
+            image.src = 'https://sq-sd.glitch.me/prompt/' + window.user.name + '/' + id + '/' + msg;
+            
+         };
+         window.AframeInjection.addEventListener('oneShot', e => {
+          if(e.detail.fromId !== window.user.id) {
+            if(e.detail.data.imageUpdate) {
+              imageToShow.components['sq-browser'].runActions([{actionType: "postmessage", strParam1: "doit"}]);
+            }else if(e.detail.data.textUpdate) {
+            }else if(e.detail.data.loadingUpdate) {
+              setTimeout(() => window.sendAframeEvent(Book_Show.object3D.id, true, "BookPageTurnTrigger"), 6000);
+              imageToShow.components['sq-browser'].runActions([{actionType: "postmessage", strParam1: "loading"}]);
+            }
+          }
+        });
+      }else{ //embed the google calendar for the story time events on the webpage if they aren't in Banter
+        const p = document.createElement('p'), iframe = document.createElement('iframe');
+        iframe.setAttribute('src', 'https://calendar.google.com/calendar/embed?height=569&wkst=2&ctz=UTC&bgcolor=%2300be00&mode=AGENDA&showPrint=0&showTitle=0&src=NjAzNDU1OGU0YzczZGVjNWFkYTk3YTUxMzFlMDBiYmJmYTdkMTk0ZWM4ZTM3NTZlZmU2MTE0YmRhOWFkMmM4ZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239E69AF');
+        iframe.setAttribute('style', 'border-width:0');
+        iframe.setAttribute('width', '420');
+        iframe.setAttribute('height', '569');
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('scrolling', 'no');
+        p.appendChild(iframe);
+        document.querySelector('body').appendChild(p);
+      }});
+     AFRAME.registerComponent('respawner', {
+        init: function() {
+          this.el.addEventListener('trigger-enter', ()=>{
+            //if the player enters the trigger, reload it
+            if(this.el.object3D.userData.isLocalPlayer){
+              //console.log(this.el.object3D.userData.isLocalPlayer);
+              lockPlayer();
+              openPage("banter://story-thyme.glitch.me");
+            }
+          });
+        }
+      });
+    </script>
+    
+  </head>
+  
+  <body>
+    <div style="display: none;"> <!-- this is a hidden div on the website, this is ignored by Banter but hides the scene on the 2D page -->
+      <a-scene sq-assetbundle="android: https://cdn.sidequestvr.com/file/556919/readingspace_android; 
+                               desktop: https://cdn.sidequestvr.com/file/556920/readingspace_standalonewindows;"
+             
+      sq-kitbundle="android: https://cdn.sidequestvr.com/file/556914/kitbundle_android; 
+                          desktop: https://cdn.sidequestvr.com/file/556915/kitbundle_standalonewindows;" 
+   
+            sq-disableteleport sq-guestsallowed="false" sq-friendpositionjoinallowed="false" sq-maxoccupancy="number: 25" sq-devtoolsenabled="false" sq-portalsenabled="false" sq-refreshrate="rate:90" sq-spawnpoint="position: 0 0 0 180;" sq-clippingplane="near: 0.15; far: 850" 
+            embedded> <!-- the embedded property stops the scene from taking up the whole page and allows the 2D page to be scrollable -->
+        
+        <!-- a player catcher if people get launched too high -->
+        <a-box respawner sq-collider sq-triggercollider position="0 2700 0" rotation="0 0 0" scale="40000 4000 40000" color="#006900" material="transparent: true; opacity: 0"></a-box>
+        
+        <!-- The ReadingThrone -->
+        <a-entity id="thron" sq-kititem="item: assets/_content/readingspace/prefabs/thron.prefab" position="0 0 0" rotation="0 0 0"></a-entity> 
+        
+        <!-- The HUGE Book -->
+        <a-entity id="Book_Show" sq-kititem="item: assets/_content/readingspace/prefabs/book_show.prefab" position="0 0 0" rotation="0 0 0"></a-entity> 
+        
+        
+        
+        
+              <!-- The Book of the Day rotating  -->
+        <a-entity id="Book_01" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_balladbirdiemaclead.prefab"> </a-entity>  
+        <a-entity id="Book_02" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_blowuppipeline.prefab"> </a-entity>  
+        <a-entity id="Book_03" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_clearquran.prefab"> </a-entity>  
+        <a-entity id="Book_04" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_delusionsofgender.prefab"> </a-entity>  
+        <a-entity id="Book_05" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_howtostudymagic.prefab"> </a-entity>  
+        <a-entity id="Book_06" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_littlebookofsatanism.prefab"> </a-entity>  
+        <a-entity id="Book_07" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_lotr_1.prefab"> </a-entity>  
+        <a-entity id="Book_08" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_lotr_2.prefab"> </a-entity>  
+        <a-entity id="Book_09" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_lotr_3.prefab"> </a-entity>
+        <a-entity id="Book_10" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_lotr_all.prefab"> </a-entity>  
+        <a-entity id="Book_11" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_nightcircus.prefab"> </a-entity>  
+        <a-entity id="Book_12" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_queerreligiosities.prefab"> </a-entity>  
+        <a-entity id="Book_13" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_readyplayerone.prefab"> </a-entity>  
+        <a-entity id="Book_14" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_satanicpanic.prefab"> </a-entity>  
+        <a-entity id="Book_15" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_thefifthseed.prefab"> </a-entity> 
+        <a-entity id="Book_16" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_verity.prefab"> </a-entity> 
+        <a-entity id="Book_17" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_wyldwood.prefab"> </a-entity> 
+        <a-entity id="Book_18" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_reconnaissanceclock.prefab"> </a-entity>
+        
+  
+        
+        <script src="https://vidya-player.glitch.me/playlist.js" 
+                position="0 -11 0" rotation="-90 0 0" scale="1 1 1" volume="1" announce="false"
+                button-position="-1.5 5.7 13.6" button-rotation="0  0 0" button-scale="0.5 1.5 0.2" spatial-min-distance="10" spatial-max-distance="60" mip-maps="0"
+                playlist="PLOzDu-MXXLlgKMA3S2FXY_XVyDrukc0si"></script>
+
+        <a-entity id="imageToShow" sq-browser="url: https://sqt.glitch.me/preview.html" position="0 -10 0" rotation="-90 0 0"></a-entity>
+      
+        <!-- A big Curved Screen with transparency --
+        <a-entity sq-kititem="item: assets/_content/readingspace/prefabs/curvedscreennoani.prefab" position="0 10 40" rotation="0 0 0" scale="0.3 0.3 0.3">  
+        </a-entity>   -->
+        
+        <!-- The Video Book -->
+        <a-entity sq-kititem="item: assets/_content/readingspace/prefabs/videobook.prefab" position="5.216 1.52 30.777" rotation="-2.41 54.064 162.901"></a-entity> 
+        
+        <!-- The Video Book -->
+        <a-entity sq-kititem="item: assets/_content/readingspace/prefabs/curvedscreen.prefab" position="0 40 -450" rotation="0 0 0" scale="15 15 15"></a-entity> 
+        
+        <!-- A Selfie Camera  -->
+        <a-entity sq-kititem="item: assets/prefabs/selfiecamera/selfiecam.prefab" position="-0.283 6.468 9.877" rotation="0 90 0"></a-entity> 
+        
+        <!-- Camera to capture the video Player ( Needs the same position as the Video Player)   -->
+        <a-entity sq-kititem="item: assets/_content/readingspace/prefabs/videocamera.prefab" position="0 -10 0"></a-entity>
+        
+      </a-scene>
+    </div>
+    <div id="banter-info"></div>
+    
+      </body>
+</html>

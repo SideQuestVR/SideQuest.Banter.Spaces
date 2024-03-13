@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <!-- All animated gifs are believed to be free to use unless marked otherwise. -->
+    <!-- Burning Flame hosted by Best Animations on bestanimations.com. -->
+  
+
+    <meta property="og:title" content="Island (Night)">
+    <meta property="og:description" content="Originally an AltspaceVR world, ported to Banter. Model designed by John, textures optimised by Richie for Banter.">
+    <meta property="og:image" content="https://cdn.sidequestvr.com/file/353020/comsidequestbanter-20230418-153027.jpg">
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://lunartiger.github.io/banter/assets/js/webcontent.js" sq-space="https://sidequestvr.com/space/1218"></script>
+    <script>
+      AFRAME.registerComponent('respawn-the-ball', {
+        init: function () {
+          this.el.addEventListener('click', () => {
+            const ball = document.getElementById('grab_ball');
+            if(ball.object3D.id && window.isBanter){
+              addForce({x: 0, y: 0, z: 0}, 'force', ball.object3D.id);
+              moveRotation({x: 0, y: 0, z: 0}, ball.object3D.id);
+              movePosition({x: -3, y: 1.5, z: -10}, ball.object3D.id);
+            }
+          })
+        }
+      });
+       AFRAME.registerComponent('handle-click', {
+          init: function () {
+              let clicked = false;
+              // When you click on an element, run the animation on the parent element
+              this.el.addEventListener('click', () => {
+                clicked = !clicked;
+                if(clicked) {
+                  console.log(clicked, "gorillaPlayer");
+                  gorillaPlayer()
+                }else{
+                  console.log(clicked, "ungorillaPlayer");
+                  ungorillaPlayer()
+                }
+              })
+          }
+      });
+    </script>
+  </head>
+  <body>
+    <div style="display: none;"><a-scene sq-assetbundle="android: https://cdn.sidequestvr.com/file/489412/bant-island-night_android; 
+                                                         desktop: https://cdn.sidequestvr.com/file/489414/bant-island-night_standalonewindows" 
+                                         
+                                          sq-kitbundle="android: https://cdn.sidequestvr.com/file/529756/screens_kitbundle_android; 
+                                                        desktop: https://cdn.sidequestvr.com/file/529758/screens_kitbundle_standalonewindows;" 
+                                         
+                          sq-refreshrate="rate:90" sq-spawnpoint="position: 0 1 0 50;" sq-enablespiderman sq-clippingplane="near: 0.1;far: 600" sq-maxoccupancy="number: 30" sq-guestsallowed="true" embedded>
+
+        <!-- A Screen with a Frame  -->
+        <a-entity sq-kititem="item: assets/prefabs/screens/defaultscreen.prefab" position="-28 2 19" rotation="0 180 0" scale="0.5 0.5 0.5">
+         <!--   <a-entity sq-kititem="item: assets/prefabs/screens/defaultreflection.prefab" position="0 -2.7 0"></a-entity> -->
+          <a-entity sq-kititem="item: assets/prefabs/screens/defaultmetalframe.prefab"></a-entity> 
+         <!--  <a-entity sq-kititem="item: assets/prefabs/screens/defaultwoodframe.prefab"></a-entity> -->
+        </a-entity>  
+      
+       <!-- A 3D Screen  
+          <a-entity sq-kititem="item: assets/prefabs/screens/default3dwithframescreen.prefab" position="-28 0.6 19" rotation="0 180 0" scale="0.5 0.5 0.5">
+            <a-entity sq-kititem="item: assets/prefabs/screens/defaultreflection.prefab"></a-entity>
+          </a-entity> -->
+      
+<!--        A big Curved Screen with transparency   -->
+<!--           <a-entity sq-kititem="item: assets/prefabs/screens/curvedscreen.prefab" position="-28 0.6 35" rotation="0 180 0" scale="1 1 1">
+            <a-entity sq-kititem="item: assets/prefabs/screens/curvedscreenreflection.prefab"></a-entity>
+          </a-entity> -->
+      
+      <!-- A stage with transparency 
+          <a-entity sq-kititem="item: assets/prefabs/screens/holostagescreen.prefab" position="-28 0.6 19" rotation="0 180 0" scale="1 1 1">
+            <a-entity sq-kititem="item: assets/prefabs/screens/defaultreflection.prefab" scale="0.5 0.5 0.5"></a-entity>
+          </a-entity>  -->
+      
+       <!-- A big Half Dome Screen with transparency 
+          <a-entity sq-kititem="item: assets/prefabs/screens/halfdomescreen.prefab" position="-28 0.6 19" rotation="0 180 0" scale="0.5 0.5 0.5">
+            <a-entity sq-kititem="item: assets/prefabs/screens/halfedomereflection.prefab"></a-entity>
+          </a-entity> -->
+      
+       <!-- Two big Half Dome Screen with transparency -->
+<!--           <a-entity sq-kititem="item: assets/prefabs/screens/dome2xscreen.prefab" position="-28 0.6 19" rotation="0 180 0" scale="0.5 0.5 0.5">
+            <a-entity sq-kititem="item: assets/prefabs/screens/dome2xreflection.prefab"></a-entity>
+          </a-entity>  -->
+      
+      
+       <!-- A big 360 Screen with transparency 
+        <a-entity sq-kititem="item: assets/prefabs/screens/sphere_screen.prefab" position="-28 0.6 19" rotation="0 180 0" scale="0.5 0.5 0.5">
+          <a-entity sq-kititem="item: assets/prefabs/screens/spheredomereflection.prefab"></a-entity>
+        </a-entity> -->
+      
+      <!-- A Selfie Camera -->
+        <a-entity sq-kititem="item: assets/prefabs/selfiecamera/selfiecam.prefab" position="-39.5 1.65 1.75" rotation="0 180 0"></a-entity> 
+      
+      <!-- Camera to capture the video Player ( Needs the same position as the Video Player) -->
+        <a-entity sq-kititem="item: assets/prefabs/screens/videocamera.prefab" position="-28 -1 19"></a-entity>
+     
+    <script src="https://vidya-player.glitch.me/playlist.js" 
+              position="-28 -1 19" rotation="-90 0 0" scale="1 1 1" volume="10" 
+              button-position="-28 0.75 19" button-rotation="0 180 0" button-scale="1 1 1" spatial-min-distance="10" spatial-max-distance="60" mip-maps="0"
+              playlist="PL1GnTnnMiUb5_eIZqu9kNAJ6gcPUyOT7u"></script> 
+<!--       <a-entity sq-browser="url: https://screen-cast.glitch.me/?sid=3635735735737; afterLoadActions: [ { &quot;actionType&quot;: &quot;delayseconds&quot;, &quot;numParam1&quot;: 1}, {&quot;actionType&quot;: &quot;click2d&quot;, &quot;numParam1&quot;: 125, &quot;numParam2&quot;: 100}]" position="-28 -1 19" rotation="-90 0 0" scale="1 1 1"></a-entity> -->
+<!--     afterLoadActions: [ { &quot;actionType&quot;: &quot;delayseconds&quot;, &quot;numParam1&quot;: 2}, {&quot;actionType&quot;: &quot;click2d&quot;, &quot;numParam1&quot;: 125, &quot;numParam2&quot;: 100}]   -->
+             <!-- Enable for VideoJukebox Player Only
+ 80s PL1GnTnnMiUb5_eIZqu9kNAJ6gcPUyOT7u
+90s PLFczJQWL3c0hvajZ3MyNFzUO3QURpY7N0
+90s extra PLmXxqSJJq-yUvMWKuZQAB_8yxnjZaOZUp
+-->
+     <!-- 
+ <script src="https://vidya-player.glitch.me/playlist.js" instance="bant-island" 
+              position="-28 5 19" rotation="0 180 0" scale="10 10 10" volume="10" spatial-min-distance="5" spatial-max-distance="40"
+              playlist="PLmXxqSJJq-yUvMWKuZQAB_8yxnjZaOZUp"></script>      -->
+            <a-box sq-collider sq-interactable handle-click color="cyan"  position="-31.5 1 19" rotation="0 180 0" depth="0.05" width="1.5" height="0.4">
+        <a-text value="Monke Mode!" position="0 0 0.06" align="center" color="black"></a-text>
+          </a-box>
+      
+      
+
+      
+    </a-scene></div>
+  </body>
+</html>

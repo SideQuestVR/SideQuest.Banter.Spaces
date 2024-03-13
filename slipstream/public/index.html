@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <meta property="og:title" content="0 Slipstream Island">
+    <meta property="og:description" content="Our 2nd flagship space - Explore, climb, slide and swing around this expansive island.">
+    <meta property="og:image" content="https://cdn.glitch.global/d439d734-3aff-48b3-bebe-cc72d8816aa5/Slipstream_Island_Poste6r_copy1.jpg?v=1685996499678">
+    <meta name="sidequest-space-verification" content="16ad3b5b-f848-4b45-a65b-38a115d0d430">
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>    
+    <script src="./index.js"></script>
+    <script src="https://lunartiger.github.io/banter/assets/js/webcontent.js" sq-space="https://sidequestvr.com/space/1209"></script>
+    <script>
+      // A simple aframe component to handle the click
+      AFRAME.registerComponent('handle-click', {
+          init: function () {
+              let clicked = false;
+              // When you click on an element, run the animation on the parent element
+              this.el.addEventListener('click', () => {
+                clicked = !clicked;
+                if(clicked) {
+                  console.log(clicked, "gorillaPlayer");
+                  gorillaPlayer()
+                }else{
+                  console.log(clicked, "ungorillaPlayer");
+                  ungorillaPlayer()
+                }
+              })
+          }
+      });
+    </script>
+    
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J4FKQ6V2S4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J4FKQ6V2S4');
+</script>
+
+    
+    
+  </head>
+  
+  <body>
+    <div style="display: none;"><a-scene sq-assetbundle="android: https://cdn.sidequestvr.com/file/556852/slipstream_island_sunset_android; 
+                             desktop: https://cdn.sidequestvr.com/file/556853/slipstream_island_sunset_standalonewindows;"
+             
+       sq-kitbundle="android: https://hoehler.org/Banter/AssetBundle/Screens_kitbundle_android; 
+                     desktop: https://hoehler.org/Banter/AssetBundle/Screens_kitbundle_standalonewindows;" 
+             
+
+            sq-enablespiderman sq-refreshrate="rate:90" sq-maxoccupancy="number: 20" sq-spawnpoint="position: -16.324 1.8 -19.796 180;" sq-clippingplane="near: 0.15; far: 900" sq-guestsallowed="true" embedded sq-forcegrabenabled="enabled: true">
+<!--       https://cdn.sidequestvr.com/file/505966/kitbundle_android -->
+<!--       https://cdn.sidequestvr.com/file/505967/kitbundle_standalonewindows -->
+      
+      
+<!--          <a-entity id="npc" sq-kititem="item: assets/prefabs/ai_npc.prefab" position="0 10 5"></a-entity> -->
+      <!-- A Selfie Camera -->
+        <a-entity sq-kititem="item: assets/prefabs/selfiecamera/selfiecam.prefab" position="49.097 4.718 11.713" rotation="0 -40 0"></a-entity> 
+      <a-entity sq-kititem="item: assets/prefabs/selfiecamera/selfiecam1.prefab" position="48.097 4.718 12.713" rotation="0 -40 0"></a-entity> 
+      
+        <a-entity sq-kititem="item: assets/prefabs/screens/videocamera.prefab" position="53.615 2.479 -18.987" rotation="0 17 0"></a-entity> 
+      <a-entity sq-kititem="item: assets/prefabs/screens/defaultscreen.prefab" position="53 3.012 -21" rotation="0 17 0" scale="0.244 0.244 0.244"></a-entity> 
+      <a-entity sq-kititem="item: assets/prefabs/screens/curvedscreen.prefab" position="52.91 2.77 -21.31" rotation="0 17 0" scale="0.244 0.244 0.244"></a-entity> 
+      
+      
+        <a-entity sq-kititem="item: assets/prefabs/screens/curvedscreenparaoccadd.prefab" position="60 3.012 -21" rotation="0 17 0" scale="0.244 0.244 0.244"></a-entity> 
+      
+     <script src="https://vidya-player.glitch.me/playlist.js" one-for-each-instance="true"
+              position="53.615 2.479 -18.987" rotation="-90 0 17" scale="1 1 1" volume="10"
+              button-position="53 2.8 -21" button-rotation="0  17 0" button-scale="1 1 1" spatial-min-distance="5" spatial-max-distance="30" mip-maps="0"
+              playlist="PLWb_eZKnVCUNE-Qos6PGp07O9nmOLCUAP"
+      
+      ></script>
+      
+      <!-- A box to click to be able to open a page -->
+      <a-box sq-collider sq-interactable handle-click color="green" position="0 1 -4" depth="0.05" width="1.5" height="0.4">
+        <a-text value="click me" position="0 0 0.06" align="center"></a-text>
+      </a-box>
+      
+      
+<!--         <a-plane src="https://cdn.glitch.global/9e304442-187c-4c18-93a2-5969d329fa33/BabyGollum.jpg?v=1689520584995" position="53 4.5 -21" rotation="0 17 0" scale="5 2.9 5"></a-plane> -->
+      
+<!--         <a-entity sq-kititem="item: assets/marshmallow/marshmallow.prefab" handle-grab="number: marshmallow; pos: 57 3.74 -4.4" sq-grabbable rotation="128.833 -44.002 94.202" sq-boxcollider="size: .05 .05 .05; center: 0 -0.05 -0.05;" sq-rigidbody="isKinematic: true;" position="57 3.74 -4.4"></a-entity>
+ -->
+      </a-scene></div>
+  </body>
+</html>
