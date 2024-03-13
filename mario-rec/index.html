@@ -1,0 +1,222 @@
+<html>
+  <head>
+    <meta property="og:title" content="Banter Parkour Training BETA (Beginners)">
+    <meta property="og:description" content="a space to learn basic parkour from a pre-recorded avatar that is definitely not sentient.">
+    <meta property="og:image" content="https://cdn.glitch.global/649834d7-e76b-4cf2-9cf1-ee904d67b53b/Banter_2wyUPVQobV.png?v=1">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="/Music.js"></script>
+    <script src="/MusicChangeArea.js"></script>
+    <script src="/WarpBox.js"></script>
+    <script src="/ParkourPlayer.js"></script>
+    <meta name="sidequest-space-verification" content="9e5609f3-c9da-41e8-93fb-88e91d0e901e">
+    <script src="https://lunartiger.github.io/banter/assets/js/webcontent.js" sq-space="https://sidequestvr.com/space/1826"></script>
+  </head>
+  <body>
+
+    <div style="display: none;"><a-scene
+      sq-refreshrate="rate: 80;"
+      sq-disableteleport
+      sq-spawnpoint="position: 0 -76.8 0;"
+      sq-clippingplane="near: 0.05; far: 500;"
+      embedded
+    >
+        
+      <a-assets>
+        <audio
+          id="superbell"
+          src="https://cdn.glitch.global/e3d69be4-139c-4e16-ad98-29dc8b38f9ef/Redc_bgm_Field01.my.32.dspadpcm%20(loop).mp3?v=1671288657223;"
+          preload="true"
+        ></audio>
+        <audio
+          id="fantacy"
+          src="https://cdn.glitch.global/e3d69be4-139c-4e16-ad98-29dc8b38f9ef/Redc_bgm_Fantasy.my.32.dspadpcm%20(loop).mp3?v=1673034027624;"
+          preload="true"
+        ></audio>
+        <audio
+          id="sky"
+          src="https://cdn.glitch.global/e3d69be4-139c-4e16-ad98-29dc8b38f9ef/Redc_bgm_Skybonus01.my.32.dspadpcm%20(loop).mp3?v=1673184473403;"
+          preload="true"
+        ></audio>
+      </a-assets>
+      
+      <a-entity id="intro"></a-entity>
+
+      <a-entity
+        sq-climbable="recursive: true"
+        sq-nonconvexcollider="recursive: true"
+        scale="1 1 1"
+        position="0 250 0"
+        gltf-model="https://cdn.glitch.global/e3d69be4-139c-4e16-ad98-29dc8b38f9ef/Part%20Sky%20A.glb?v=1673110946167"
+      >
+      </a-entity>
+      <a-entity
+        sq-climbable="recursive: true"
+        sq-nonconvexcollider="recursive: true"
+        scale="1 1 1"
+        position="0 250 0"
+        gltf-model="https://cdn.glitch.global/e3d69be4-139c-4e16-ad98-29dc8b38f9ef/Part%20Sky%20Slippy.glb?v=1673111748493"
+        sq-slippery="friction: 0.1; recursive: true"
+      >
+      </a-entity>
+
+      <a-entity
+        sq-nonconvexcollider="recursive: true"
+        scale="3 3 3"
+        position="550 -80 0"
+        gltf-model="https://cdn.glitch.global/e3d69be4-139c-4e16-ad98-29dc8b38f9ef/PartB.glb?v=1673214846429"
+      >
+      </a-entity>
+      <a-entity
+        sq-climbable="recursive: true"
+        sq-nonconvexcollider="recursive: true"
+        scale="3 3 3"
+        position="0 -80 0"
+        gltf-model="https://cdn.glitch.global/e3d69be4-139c-4e16-ad98-29dc8b38f9ef/BanterMarioPartA.glb?v=1673297500879"
+      >
+      </a-entity>
+      <a-entity
+        scale="3 3 3"
+        position="0 -80 0"
+        gltf-model="https://cdn.glitch.global/e3d69be4-139c-4e16-ad98-29dc8b38f9ef/Sky.glb?v=1671552073856"
+        material="shader: flat;"
+      >
+      </a-entity>
+      <a-entity
+        id="SBH-BGM"
+        sound="src: #superbell;
+              positional: false; 
+              volume: 0.1; 
+              loop: true; 
+              autoplay: false;"
+      >
+      </a-entity>
+
+      <a-entity
+        id="Candy-BGM"
+        sound="src: #fantacy;
+              positional: false; 
+              volume: 0.1; 
+              loop: true; 
+              autoplay: false;"
+      >
+      </a-entity>
+
+      <a-entity
+        id="Cloud-BGM"
+        sound="src: #sky;
+              positional: false; 
+              volume: 0.1; 
+              loop: true; 
+              autoplay: false;"
+      >
+      </a-entity>
+
+      <a-entity
+        id="WarpCube"
+        scale="1 2 1"
+        position="66 -71.25 37"
+        boxwarp="point:555 -60 0"
+        sq-boxcollider
+        sq-interactable
+        sq-triggercollider
+      >
+        <a-entity
+          scale="1 0.5 1"
+          gltf-model="https://cdn.glitch.global/e3d69be4-139c-4e16-ad98-29dc8b38f9ef/WarpCube.glb?v=1673188795743"
+        >
+        </a-entity>
+      </a-entity>
+
+      <a-entity
+        id="CloudCannon"
+        position="76 -71 55"
+        scale="1 4 1"
+        boxwarp="point:0 255 0"
+        sq-boxcollider
+        sq-interactable
+        sq-triggercollider
+      >
+        <a-entity
+          scale="0.5 0.125 0.5"
+          rotation="0 180 0"
+          gltf-model="https://cdn.glitch.global/e3d69be4-139c-4e16-ad98-29dc8b38f9ef/CloudBonusLauncher.glb?v=1673213631442"
+        >
+        </a-entity>
+      </a-entity>
+
+      <a-entity
+        id="CloudMusicArea"
+        position="33 255 22"
+        scale="300 200 300"
+        music-change-area="FromAudio:SBH-BGM; ToAudio:Cloud-BGM"
+        sq-boxcollider
+        sq-interactable
+        sq-triggercollider
+      ></a-entity>
+      <a-entity
+        id="GoalMusicArea"
+        position="540 -50 0"
+        scale="300 200 300"
+        music-change-area="FromAudio:SBH-BGM; ToAudio:Candy-BGM"
+        sq-boxcollider
+        sq-interactable
+        sq-triggercollider
+      ></a-entity>
+
+      <a-entity
+        scale="300 50 300"
+        position="0 200 0"
+        boxwarp="point:0 -75 0"
+        sq-boxcollider
+        sq-interactable
+        sq-triggercollider
+      ></a-entity>
+      
+      <a-entity
+        scale="3000 10 3000"
+        position="0 -97.5 0"
+        boxwarp="point:0 -75 0"
+        sq-boxcollider
+        sq-interactable
+        sq-triggercollider
+      ></a-entity>
+      
+      
+
+      <a-entity position="1.2 -76.25 1.8" rotation="-30 -115 0">
+        <a-box
+          sq-collider
+          sq-interactable
+          toggle-music
+          scale="0.8 0.8 0.1"
+          color="#476930"
+        ></a-box>
+        <a-text
+          value="Music"
+          scale="0.4 0.4 0.4"
+          position="0 0 0.052"
+          align="center"
+        ></a-text>
+      </a-entity>
+      
+      
+      <a-entity position="-2.5 -76.25 -1.8" rotation="-30 65 0">
+        <a-box
+          sq-collider
+          sq-interactable
+          toggle-easy
+          scale="0.8 0.8 0.1"
+          color="#476930"
+        ></a-box>
+        <a-text
+          id="easyText"
+          value="Easy Mode"
+          scale="0.4 0.4 0.4"
+          position="0 0 0.052"
+          align="center"
+        ></a-text>
+      </a-entity>
+      
+    </a-scene></div>
+  </body>
+</html>
