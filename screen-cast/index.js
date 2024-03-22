@@ -34,7 +34,7 @@ function makeFullScreen(id) {
 var urlParams = new URLSearchParams(window.location.search);
 
 function copyText(text) {
-  text = "https://screen-cast.glitch.me/?sid=" + text;
+  text = "https://sidequestvr.github.io/SideQuest.Banter.Spaces/screen-cast/?sid=" + text;
    // Copy the text inside the text field
   navigator.clipboard.writeText(text);
   // Alert the copied text
