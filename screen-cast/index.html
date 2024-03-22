@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Screen Cast</title>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/8.2.2/adapter.min.js" ></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js" ></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+<script type="text/javascript" src="janus.js" ></script>
+<script type="text/javascript" src="index.js"></script>
+<script>
+	$(function() {
+		$(".navbar-static-top").load("navbar.html", function() {
+			$(".navbar-static-top li.dropdown").addClass("active");
+			$(".navbar-static-top a[href='screensharingtest.html']").parent().addClass("active");
+		});
+		$(".footer").load("footer.html");
+	});
+</script>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"/>
+  <style>
+    html{
+      background-color: #16181f;
+    }
+    body{
+      background-color: #16181f;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h1 style="color: white">Screen Cast</h1>
+			</div>
+			<div class="container" id="details">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 style="color: white">Loading...</h3>
+					</div>
+				</div>
+			</div>
+			<div class="container hide" id="screenmenu">
+				<div class="row">
+					<div class="input-group margin-bottom-md hide" id="createnow">
+<!-- 						<span class="input-group-addon"><i class="fa fa-users fa-1"></i></span> -->
+<!-- 						<input class="form-control" type="text" placeholder="Enter a name for the stream" autocomplete="off" id="desc" onkeypress="return checkEnterShare(this, event);" /> -->
+						<span class="input-group-btn">
+							<button class="btn btn-success" autocomplete="off" id="create">Cast Your Screen</button>
+						</span>
+					</div>
+				</div>
+				<div class="divider col-md-12" style="color: white">
+          <br>
+					<hr class="pull-left"/>or<hr class="pull-right"/>
+				</div>
+				<div class="row">
+					<div class="input-group margin-bottom-md hide" id="joinnow">
+						<span class="input-group-addon"><i class="fa fa-play-circle-o fa-1"></i></span>
+						<input class="form-control" type="text" placeholder="Enter the join code" autocomplete="off" id="roomid" onkeypress="return checkEnterJoin(this, event);" />
+						<span class="input-group-btn">
+							<button class="btn btn-success" autocomplete="off" id="join">Join Screen Cast</button>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="container hide" id="room">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Name: <span class="label label-info" id="title"></span> Join Code: <span class="label label-success" id="session"></span></h3>
+							</div>
+							<div class="panel-body" id="screencapture"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+</div>
+
+</body>
+</html>
