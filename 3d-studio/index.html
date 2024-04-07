@@ -8,7 +8,7 @@
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
 
     
-    <script>
+<!--     <script>
       let isScreenOpen = false, isTableOn = false;
       // Receiving messages from Unity in the AframeTrigger.cs
       aframeTriggerCallback = (msg, isLocal) => {
@@ -50,7 +50,7 @@
           
           window.sendAframeEvent(this.object3D.id, true, "Here/This/Something"); // true is AframeEventEnter, false is AframeEventExit
       */
-  </script>
+  </script> -->
 
     
   </head>
@@ -67,8 +67,8 @@
                           desktop: https://hoehler.org/Banter/AssetBundle/Screens_kitbundle_standalonewindows;"  -->
      
         <!-- Default screen -->
-          <a-entity id="screen" sq-kititem="item: assets/prefabs/screens/defaultscreen.prefab" visible="false" position="-0.6 1.45 -8.75" rotation="0 0 0" scale="0.16 0.16 1"></a-entity> 
-      
+<!--           <a-entity id="screen" sq-kititem="item: assets/prefabs/screens/defaultscreen.prefab" visible="false" position="-0.6 1.45 -8.75" rotation="0 0 0" scale="0.16 0.16 1"></a-entity> 
+       -->
        <!-- Button to toggle visibility 
       <a-box sq-interactable sq-collider position="-1 1.2 -8.802" rotation="0 0 0" color="#F1C232" scale="0.1 0.1 0.02" ></a-box>
 -->
@@ -90,7 +90,7 @@
      
       <!-- Enable for Screenshare Only -->
          <a-entity  
-                sq-browser="url: https://screen-cast.glitch.me/?sid=999876542742748; mipMaps: 1; pixelsPerUnit: 1600; mode: local;" position="0 3.34 7.26" rotation="0 180 0" announce="false" scale="7 7 7"></a-entity> 
+                sq-browser="url: https://screen-cast.glitch.me/?sid=999876542742748; mipMaps: 0; pixelsPerUnit: 1600; mode: local;" position="0 -1 10" rotation="-90 0 0" announce="false" scale="1 1 1"></a-entity> 
       
       
       
