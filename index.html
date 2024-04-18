@@ -11,12 +11,7 @@
     <script>
       AFRAME.registerComponent("enable-interaction", {
         init: function() {
-          console.log("init component");
-          this.el.addEventListener("unityready", ()=>{
-            
-          console.log("unityready component");
             setTimeout(()=>this.el.browser.ToggleInteraction(true), 5000);
-          });
         }
       });
     </script>
