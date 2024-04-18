@@ -10,8 +10,9 @@
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script>
       AFRAME.registerComponent("enable-interaction", {
-        init: function() {
-            setTimeout(()=>this.el.browser.ToggleInteraction(true), 5000);
+        init: async function() {
+            await window.AframeInjection.waitFor(this.el, "browser");
+            this.el.browser.ToggleInteraction(true)
         }
       });
     </script>
