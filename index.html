@@ -8,6 +8,15 @@
     <meta name="sidequest-space-verification" content="6057256d-5b6c-403b-a019-e977992d088d">
 
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script>
+      AFRAME.registerComponent("enable-interaction", {
+        init: function() {
+          this.el.addEventListener("unityready", ()=>{
+            setTimeout(()=>this.el.browser.ToggleInteraction(true), 2000);
+          });
+        }
+      });
+    </script>
   </head>
   
   <body>
@@ -36,7 +45,7 @@
              show-events="false"  spacing="2.7" position="0 1 -11.3" rotation="0 0 0" space-limit="5"></script>
 <!--  <a-link position="0 1 -11.3" rotation="0 0 0" scale="1.8 1.8 1.8" href="https://the-bantrooms42.glitch.me"></a-link> -->
   
-<a-entity sq-browser-interaction sq-browser="mipMaps: 3; pixelsPerUnit: 1600; mode: local; url: https://bantervr.com/events;" position="-8 2 -1" rotation="0 -90 0" scale="4 4 4"></a-entity>
+<a-entity sq-browser-interaction sq-browser="mipMaps: 3; pixelsPerUnit: 1600; mode: local; url: https://bantervr.com/events;" position="-8 2 -1" rotation="0 -90 0" scale="4 4 4" enable-interaction></a-entity>
   
       
    <a-entity position="-1.097729 -1 -61.5" rotation="0 -100 0">
