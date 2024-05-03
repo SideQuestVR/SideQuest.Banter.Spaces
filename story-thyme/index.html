@@ -155,11 +155,11 @@
   
   <body>
     <div style="display: none;"> <!-- this is a hidden div on the website, this is ignored by Banter but hides the scene on the 2D page -->
-      <a-scene sq-assetbundle="android: https://cdn.sidequestvr.com/file/579902/readingspace_android; 
-                               desktop: https://cdn.sidequestvr.com/file/579903/readingspace_standalonewindows;"
+      <a-scene sq-assetbundle="android: https://cdn.sidequestvr.com/file/591250/readingspace_android; 
+                               desktop: https://cdn.sidequestvr.com/file/591251/readingspace_standalonewindows;"
              
-      sq-kitbundle="android: https://cdn.sidequestvr.com/file/585420/kitbundle_android; 
-                          desktop: https://cdn.sidequestvr.com/file/585421/kitbundle_standalonewindows;" 
+      sq-kitbundle="android: https://cdn.sidequestvr.com/file/591259/kitbundle_android; 
+                          desktop: https://cdn.sidequestvr.com/file/591261/kitbundle_standalonewindows;" 
    
             sq-disableteleport sq-guestsallowed="false" sq-friendpositionjoinallowed="false" sq-maxoccupancy="number: 25" sq-devtoolsenabled="false" sq-portalsenabled="false" sq-refreshrate="rate:90" sq-spawnpoint="position: 0 0 0 180;" sq-clippingplane="near: 0.15; far: 850" 
             embedded> <!-- the embedded property stops the scene from taking up the whole page and allows the 2D page to be scrollable -->
@@ -172,33 +172,29 @@
         
         <!-- The HUGE Book -->
         <a-entity id="Book_Show" sq-kititem="item: assets/_content/readingspace/prefabs/book_show.prefab" position="0 0 0" rotation="0 0 0"></a-entity> 
+
+        
+        <a-entity sq-kititem="item: assets/_content/readingspace/prefabs/shelfedbooks.prefab" position="0 0 0" rotation="0 0 0"></a-entity> 
         
         
         
         
               <!-- The Book of the Day rotating  -->
         <a-entity id="Book_01" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_balladbirdiemaclead.prefab"> </a-entity>  
-        <a-entity id="Book_02" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_blowuppipeline.prefab"> </a-entity>  
-        <a-entity id="Book_03" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_clearquran.prefab"> </a-entity>  
-        <a-entity id="Book_04" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_delusionsofgender.prefab"> </a-entity>  
-        <a-entity id="Book_05" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_howtostudymagic.prefab"> </a-entity>  
-        <a-entity id="Book_06" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_littlebookofsatanism.prefab"> </a-entity>  
-        <a-entity id="Book_07" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_lotr_1.prefab"> </a-entity>  
-        <a-entity id="Book_08" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_lotr_2.prefab"> </a-entity>  
-        <a-entity id="Book_09" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_lotr_3.prefab"> </a-entity>
-        <a-entity id="Book_10" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_lotr_all.prefab"> </a-entity>  
-        <a-entity id="Book_11" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_nightcircus.prefab"> </a-entity>  
-        <a-entity id="Book_12" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_queerreligiosities.prefab"> </a-entity>  
-        <a-entity id="Book_13" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_readyplayerone.prefab"> </a-entity>  
-        <a-entity id="Book_14" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_satanicpanic.prefab"> </a-entity>  
-        <a-entity id="Book_15" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_thefifthseed.prefab"> </a-entity> 
-        <a-entity id="Book_16" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_verity.prefab"> </a-entity> 
-        <a-entity id="Book_17" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_wyldwood.prefab"> </a-entity> 
-        <a-entity id="Book_18" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_reconnaissanceclock.prefab"> </a-entity>
-        <a-entity id="Book_19" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_thechalkman.prefab"> </a-entity>
-        <a-entity id="Book_20" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_bloodmeridian.prefab"> </a-entity>
-        
-  
+        <a-entity id="Book_02" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_bloodmeridian.prefab"> </a-entity>  
+        <a-entity id="Book_03" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_blowuppipeline.prefab"> </a-entity>  
+        <a-entity id="Book_04" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_clearquran.prefab"> </a-entity>
+        <a-entity id="Book_05" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_invisiblemonsters.prefab"> </a-entity>
+        <a-entity id="Book_06" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_littlebookofsatanism.prefab"> </a-entity> 
+        <a-entity id="Book_07" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_lotr_3.prefab"> </a-entity> 
+        <a-entity id="Book_08" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_queerreligiosities.prefab"> </a-entity> 
+        <a-entity id="Book_09" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_readyplayertwo.prefab"> </a-entity>  
+        <a-entity id="Book_10" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_satanicpanic.prefab"> </a-entity>  
+        <a-entity id="Book_11" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_thechalkman.prefab"> </a-entity>  
+        <a-entity id="Book_12" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_thefifthseed.prefab"> </a-entity>  
+        <a-entity id="Book_13" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_thelightningthief.prefab"> </a-entity>  
+        <a-entity id="Book_14" class="books-entity" sq-kititem="item: assets/_content/readingspace/prefabs/botd_wyldwood.prefab"> </a-entity>  
+
         
         <script src="https://vidya.sdq.st/playlist.js" 
                 position="0 -11 0" rotation="-90 0 0" scale="1 1 1" volume="1" announce="false"
