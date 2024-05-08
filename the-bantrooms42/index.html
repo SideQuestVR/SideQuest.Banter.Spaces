@@ -28,7 +28,17 @@
   gtag('config', 'G-NE8WPCR976');
 </script>
 
-    
+   <script>
+      // A simple aframe component to handle the click
+      AFRAME.registerComponent('handle-click', {
+          init: function () {
+              // When you click on an element, run the animation on the parent element
+              this.el.addEventListener('click', () => {
+                 openPage("https://event-snaps.glitch.me/")
+              })
+          }
+      });
+    </script>  
     
     
     
@@ -47,7 +57,10 @@
 <!--         <a-entity sq-kititem="item: assets/_content/selfiecamera/gripselfiecam.prefab" rotation="0 141.666 0" position="-4.028 0.897 -3.828"></a-entity> -->
         
         
-        
+        <!-- A box to click to be able to open a page -->
+      <a-box sq-collider sq-interactable handle-click color="green" position="1.472703 1.454 5" depth="0.05" width="1.5" height="0.4">
+        <a-text value="upload drawing" position="0 0 0.06" align="center"></a-text>
+      </a-box> 
         
         
 <!--                  Comment the following out  <!----
