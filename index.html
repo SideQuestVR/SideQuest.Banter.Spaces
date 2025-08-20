@@ -17,11 +17,103 @@
         }
       });
     </script>
+
+<style>
+body {
+font-family: monospace;
+background: #111;
+color: #eee;
+margin: 0;
+height: 100vh;
+display: flex;
+flex-direction: column;
+}
+#log {
+flex: 1;
+overflow-y: auto;
+padding: 10px;
+background: #222;
+}
+.event {
+margin: 2px 0;
+padding: 2px 4px;
+border-bottom: 1px solid #333;
+}
+#test-area {
+flex: 0 0 200px;
+background: #333;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 10px;
+border: 2px dashed #555;
+user-select: none;
+}
+</style>
   </head>
   
   <body>
-    <input type="text"/>
-    <a-scene  sq-assetbundle="android: https://cdn.sidequestvr.com/file/491347/lobby2_android; desktop: https://cdn.sidequestvr.com/file/491348/lobby2_standalonewindows;"
+
+
+
+
+
+
+<h3 style="margin:10px">Electron Input Event Tester</h3>
+<div id="test-area" contenteditable="true">
+Click, type, drag, or drop here
+</div>
+<div id="log"></div>
+
+
+<script>
+const logEl = document.getElementById('log');
+const testArea = document.getElementById('test-area');
+
+
+function logEvent(e) {
+const msg = `[${e.type}] target=${e.target.tagName} key=${e.key || ''} button=${e.button ?? ''} buttons=${e.buttons ?? ''} client=(${e.clientX ?? ''},${e.clientY ?? ''}) dataTransfer=${!!e.dataTransfer}`;
+console.log(e.type, e);
+
+
+const div = document.createElement('div');
+div.className = 'event';
+div.textContent = msg;
+logEl.appendChild(div);
+logEl.scrollTop = logEl.scrollHeight;
+}
+
+
+const events = [
+// Mouse events
+'mousedown','mouseup','click','dblclick','mousemove','mouseenter','mouseleave','mouseover','mouseout','contextmenu',
+// Wheel
+'wheel',
+// Drag events
+'dragstart','drag','dragenter','dragleave','dragover','drop','dragend',
+// Keyboard events
+'keydown','keypress','keyup',
+// Focus & input
+'focus','blur','input','change',
+// Touch events (for completeness)
+'touchstart','touchmove','touchend','touchcancel'
+];
+
+
+events.forEach(ev => {
+testArea.addEventListener(ev, logEvent);
+window.addEventListener(ev, logEvent);
+});
+</script>
+
+
+
+
+
+
+
+    
+    <a-scene style="display: none;" sq-assetbundle="android: https://cdn.sidequestvr.com/file/491347/lobby2_android; desktop: https://cdn.sidequestvr.com/file/491348/lobby2_standalonewindows;"
               sq-enablespiderman sq-refreshrate="rate:120" sq-spawnpoint="position: 0 0 0 0;" sq-clippingplane="near: 0.15; far: 1000">
 
 <!--    <script src="https://vidya.sdq.st/portals.js" shape="line" spiral-tightness="0.2" offsets="0,5.5,-2.5, 2.5" scale-offsets="1.8, 1.5, 1.2, 1.2"
